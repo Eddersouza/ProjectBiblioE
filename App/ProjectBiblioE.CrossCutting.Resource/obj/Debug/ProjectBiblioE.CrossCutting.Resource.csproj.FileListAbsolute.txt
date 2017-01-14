@@ -1,7 +1,0 @@
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.Resource\bin\Debug\ProjectBiblioE.CrossCutting.Resource.dll
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.Resource\bin\Debug\ProjectBiblioE.CrossCutting.Resource.pdb
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.Resource\obj\Debug\ProjectBiblioE.CrossCutting.Resource.dll
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.Resource\obj\Debug\ProjectBiblioE.CrossCutting.Resource.pdb
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.Resource\obj\Debug\ProjectBiblioE.CrossCutting.Resource.Resources.resources
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.Resource\obj\Debug\ProjectBiblioE.CrossCutting.Resource.csproj.GenerateResource.Cache
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.Resource\obj\Debug\ProjectBiblioE.CrossCutting.Resource.csprojResolveAssemblyReference.cache

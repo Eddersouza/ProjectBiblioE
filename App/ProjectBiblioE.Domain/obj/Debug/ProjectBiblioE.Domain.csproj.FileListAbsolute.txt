@@ -1,4 +1,0 @@
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Domain\bin\Debug\ProjectBiblioE.Domain.dll
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Domain\bin\Debug\ProjectBiblioE.Domain.pdb
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Domain\obj\Debug\ProjectBiblioE.Domain.dll
-D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Domain\obj\Debug\ProjectBiblioE.Domain.pdb
