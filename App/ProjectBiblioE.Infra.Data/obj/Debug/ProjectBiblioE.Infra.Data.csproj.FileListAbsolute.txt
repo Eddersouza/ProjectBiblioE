@@ -1,0 +1,6 @@
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Infra.Data\bin\Debug\ProjectBiblioE.Infra.Data.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Infra.Data\bin\Debug\ProjectBiblioE.Infra.Data.pdb
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Infra.Data\bin\Debug\ProjectBiblioE.Domain.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Infra.Data\bin\Debug\ProjectBiblioE.Domain.pdb
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Infra.Data\obj\Debug\ProjectBiblioE.Infra.Data.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.Infra.Data\obj\Debug\ProjectBiblioE.Infra.Data.pdb

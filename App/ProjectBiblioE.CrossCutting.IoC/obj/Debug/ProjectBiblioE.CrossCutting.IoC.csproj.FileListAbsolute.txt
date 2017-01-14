@@ -1,0 +1,4 @@
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.IoC\bin\Debug\ProjectBiblioE.CrossCutting.IoC.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.IoC\bin\Debug\ProjectBiblioE.CrossCutting.IoC.pdb
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.IoC\obj\Debug\ProjectBiblioE.CrossCutting.IoC.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.CrossCutting.IoC\obj\Debug\ProjectBiblioE.CrossCutting.IoC.pdb

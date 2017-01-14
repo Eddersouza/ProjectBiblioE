@@ -1,0 +1,7 @@
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.App\bin\Debug\ProjectBiblioE.App.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.App\bin\Debug\ProjectBiblioE.App.pdb
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.App\bin\Debug\ProjectBiblioE.Domain.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.App\bin\Debug\ProjectBiblioE.Domain.pdb
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.App\obj\Debug\ProjectBiblioE.App.csprojResolveAssemblyReference.cache
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.App\obj\Debug\ProjectBiblioE.App.dll
+D:\Documents\Projetos\ProjectBiblioE\App\ProjectBiblioE.App\obj\Debug\ProjectBiblioE.App.pdb
