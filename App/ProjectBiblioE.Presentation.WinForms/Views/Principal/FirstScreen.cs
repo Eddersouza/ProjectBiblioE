@@ -31,6 +31,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
         private void TileLanguages_Click(object sender, EventArgs e)
         {
             LanguagesScreen languagenScreen = new LanguagesScreen();
+            languagenScreen.ScreenLoad();
             languagenScreen.ShowDialog();
         }
 

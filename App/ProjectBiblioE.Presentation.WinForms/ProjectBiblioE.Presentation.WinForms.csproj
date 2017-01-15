@@ -56,8 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ScreenContract.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Attributes\CustomTableAttributes.cs" />
+    <Compile Include="Utils\Extensions\GridViewExtensions.cs" />
+    <Compile Include="ViewModels\LanguageViewModel.cs" />
     <Compile Include="Views\Films\FilmsScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +95,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Genres\GenresScreen.resx">
+      <DependentUpon>GenresScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Languages\LanguagesScreen.resx">
+      <DependentUpon>LanguagesScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Principal\FirstScreen.resx">
       <DependentUpon>FirstScreen.cs</DependentUpon>
     </EmbeddedResource>

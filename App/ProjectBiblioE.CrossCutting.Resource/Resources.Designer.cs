@@ -61,11 +61,29 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editar {0}.
+        /// </summary>
+        public static string GridViewExtensions_Edit {
+            get {
+                return ResourceManager.GetString("GridViewExtensions_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remover {0}.
+        /// </summary>
+        public static string GridViewExtensions_Remove {
+            get {
+                return ResourceManager.GetString("GridViewExtensions_Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_Film {
+        public static System.Drawing.Bitmap icon_edit_16_16 {
             get {
-                object obj = ResourceManager.GetObject("icon_Film", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_edit_16_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +91,9 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_Genre {
+        public static System.Drawing.Bitmap icon_Film_64_64 {
             get {
-                object obj = ResourceManager.GetObject("icon_Genre", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_Film_64_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +101,29 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_Language {
+        public static System.Drawing.Bitmap icon_Genre_64_64 {
             get {
-                object obj = ResourceManager.GetObject("icon_Language", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_Genre_64_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_Language_64_64 {
+            get {
+                object obj = ResourceManager.GetObject("icon_Language_64_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_trash_16_16 {
+            get {
+                object obj = ResourceManager.GetObject("icon_trash_16_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

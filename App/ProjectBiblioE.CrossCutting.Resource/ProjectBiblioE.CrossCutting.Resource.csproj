@@ -54,13 +54,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon-Film.png" />
+    <None Include="Resources\icon_Language_64_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon-Genre.png" />
+    <None Include="Resources\icon_Film_64_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon-Language.png" />
+    <None Include="Resources\icon_Genre_64_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_edit_16_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_trash_16_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
