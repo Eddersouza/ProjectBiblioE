@@ -133,22 +133,22 @@
   <data name="icon_trash_16_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\icon_trash_16_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PrincipalScreen_TileFilms" xml:space="preserve">
-    <value>Filmes</value>
-  </data>
-  <data name="PrincipalScreen_TileGenres" xml:space="preserve">
-    <value>Gêneros</value>
-  </data>
-  <data name="PrincipalScreen_TileLanguages" xml:space="preserve">
-    <value>Idiomas</value>
-  </data>
-  <data name="PrincipalScreen_Title" xml:space="preserve">
-    <value>BiblioE</value>
-  </data>
   <data name="GridViewExtensions_Edit" xml:space="preserve">
     <value>Editar {0}</value>
   </data>
   <data name="GridViewExtensions_Remove" xml:space="preserve">
     <value>Remover {0}</value>
+  </data>
+  <data name="LanguageViewModel_Code" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="LanguageViewModel_LanguageId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="LanguageViewModel_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Language_Module" xml:space="preserve">
+    <value>Idioma</value>
   </data>
 </root>

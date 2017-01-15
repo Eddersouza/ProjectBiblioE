@@ -5,7 +5,7 @@ using System.Resources;
 namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
 {
     /// <summary>
-    /// Class to custom table attributes 
+    /// Custom table attributes 
     /// </summary>
     public class CustomTableAttributes : Attribute
     {

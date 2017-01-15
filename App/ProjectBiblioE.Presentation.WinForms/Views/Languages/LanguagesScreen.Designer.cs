@@ -32,8 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBoxLanguageSearch = new System.Windows.Forms.GroupBox();
-            this.lblLanguageSearch = new MetroFramework.Controls.MetroLabel();
             this.txtLanguageSearch = new MetroFramework.Controls.MetroTextBox();
+            this.lblLanguageSearch = new MetroFramework.Controls.MetroLabel();
             this.BtnLanguageNew = new MetroFramework.Controls.MetroButton();
             this.gridLanguages = new MetroFramework.Controls.MetroGrid();
             this.grpBoxLanguageSearch.SuspendLayout();
@@ -46,19 +46,10 @@
             this.grpBoxLanguageSearch.Controls.Add(this.lblLanguageSearch);
             this.grpBoxLanguageSearch.Location = new System.Drawing.Point(23, 63);
             this.grpBoxLanguageSearch.Name = "grpBoxLanguageSearch";
-            this.grpBoxLanguageSearch.Size = new System.Drawing.Size(654, 62);
+            this.grpBoxLanguageSearch.Size = new System.Drawing.Size(654, 52);
             this.grpBoxLanguageSearch.TabIndex = 0;
             this.grpBoxLanguageSearch.TabStop = false;
             this.grpBoxLanguageSearch.Text = "Busca";
-            // 
-            // lblLanguageSearch
-            // 
-            this.lblLanguageSearch.AutoSize = true;
-            this.lblLanguageSearch.Location = new System.Drawing.Point(18, 20);
-            this.lblLanguageSearch.Name = "lblLanguageSearch";
-            this.lblLanguageSearch.Size = new System.Drawing.Size(50, 19);
-            this.lblLanguageSearch.TabIndex = 0;
-            this.lblLanguageSearch.Text = "Idioma";
             // 
             // txtLanguageSearch
             // 
@@ -89,6 +80,15 @@
             this.txtLanguageSearch.UseSelectable = true;
             this.txtLanguageSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLanguageSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblLanguageSearch
+            // 
+            this.lblLanguageSearch.AutoSize = true;
+            this.lblLanguageSearch.Location = new System.Drawing.Point(18, 20);
+            this.lblLanguageSearch.Name = "lblLanguageSearch";
+            this.lblLanguageSearch.Size = new System.Drawing.Size(50, 19);
+            this.lblLanguageSearch.TabIndex = 0;
+            this.lblLanguageSearch.Text = "Idioma";
             // 
             // BtnLanguageNew
             // 

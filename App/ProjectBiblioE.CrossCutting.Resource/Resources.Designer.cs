@@ -129,38 +129,38 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filmes.
+        ///   Looks up a localized string similar to Idioma.
         /// </summary>
-        public static string PrincipalScreen_TileFilms {
+        public static string Language_Module {
             get {
-                return ResourceManager.GetString("PrincipalScreen_TileFilms", resourceCulture);
+                return ResourceManager.GetString("Language_Module", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gêneros.
+        ///   Looks up a localized string similar to Código.
         /// </summary>
-        public static string PrincipalScreen_TileGenres {
+        public static string LanguageViewModel_Code {
             get {
-                return ResourceManager.GetString("PrincipalScreen_TileGenres", resourceCulture);
+                return ResourceManager.GetString("LanguageViewModel_Code", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Idiomas.
+        ///   Looks up a localized string similar to Id.
         /// </summary>
-        public static string PrincipalScreen_TileLanguages {
+        public static string LanguageViewModel_LanguageId {
             get {
-                return ResourceManager.GetString("PrincipalScreen_TileLanguages", resourceCulture);
+                return ResourceManager.GetString("LanguageViewModel_LanguageId", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BiblioE.
+        ///   Looks up a localized string similar to Nome.
         /// </summary>
-        public static string PrincipalScreen_Title {
+        public static string LanguageViewModel_Name {
             get {
-                return ResourceManager.GetString("PrincipalScreen_Title", resourceCulture);
+                return ResourceManager.GetString("LanguageViewModel_Name", resourceCulture);
             }
         }
     }
