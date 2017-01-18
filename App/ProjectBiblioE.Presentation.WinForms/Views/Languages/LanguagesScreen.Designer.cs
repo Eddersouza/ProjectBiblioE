@@ -80,6 +80,7 @@
             this.txtLanguageSearch.UseSelectable = true;
             this.txtLanguageSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLanguageSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLanguageSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtLanguageSearch_KeyUp);
             // 
             // lblLanguageSearch
             // 

@@ -51,8 +51,8 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         public void ScreenLoad()
         {
             List<LanguageViewModel> list = new List<LanguageViewModel>();
-            list.Add(new LanguageViewModel { LanguageId = 1, Code="en-US", Name = "Inglês" });
-            list.Add(new LanguageViewModel { LanguageId = 2, Code="pt-BR", Name = "Português" });
+            //list.Add(new LanguageViewModel { LanguageId = 1, Code="en-US", Name = "Inglês" });
+            //list.Add(new LanguageViewModel { LanguageId = 2, Code="pt-BR", Name = "Português" });
             this.PopulateGridLanguage(list);
         }
 
@@ -74,6 +74,19 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             gridLanguages.CreateColumnsByView(typeof(LanguageViewModel));
             gridLanguages.AddEditColumn(Resources.Language_Module, ColumnNameEdit);
             gridLanguages.AddRemoveColumn(Resources.Language_Module, ColumnNameRemove);
+        }
+
+        /// <summary>
+        /// Get the language by typed text
+        /// </summary>
+        /// <param name="sender">Textbox txtLanguageSearch</param>
+        /// <param name="e">Arguments of event</param>
+        private void txtLanguageSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtLanguageSearch.Text.Length > 3)
+            {
+
+            }
         }
     }
 }

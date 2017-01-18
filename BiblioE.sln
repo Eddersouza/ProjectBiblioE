@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{A62905D8-8C2B-4414-9944-026EACB0A561}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBiblioE.Infra.Data", "App\ProjectBiblioE.Infra.Data\ProjectBiblioE.Infra.Data.csproj", "{742CA12E-D18C-40C8-96B7-2AAB5DDC5587}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBiblioE.CrossCutting.IoC", "App\ProjectBiblioE.CrossCutting.IoC\ProjectBiblioE.CrossCutting.IoC.csproj", "{4DC212C9-9203-4362-849C-CE4A4547E5B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBiblioE.App.Tests", "Tests\ProjectBiblioE.App.Tests\ProjectBiblioE.App.Tests.csproj", "{990D874E-8A0C-455F-8B46-8192EFB97C61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{4DC212C9-9203-4362-849C-CE4A4547E5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC212C9-9203-4362-849C-CE4A4547E5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DC212C9-9203-4362-849C-CE4A4547E5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{990D874E-8A0C-455F-8B46-8192EFB97C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{990D874E-8A0C-455F-8B46-8192EFB97C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{990D874E-8A0C-455F-8B46-8192EFB97C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{990D874E-8A0C-455F-8B46-8192EFB97C61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +78,6 @@ Global
 		{3410C41C-DC44-4A47-9CB5-8FC1C9AAA133} = {77AEF40B-F0B1-481C-8DAD-A4FA6FDA17FA}
 		{742CA12E-D18C-40C8-96B7-2AAB5DDC5587} = {B408367D-B215-4E9F-93B9-55F07704C716}
 		{4DC212C9-9203-4362-849C-CE4A4547E5B3} = {77AEF40B-F0B1-481C-8DAD-A4FA6FDA17FA}
+		{990D874E-8A0C-455F-8B46-8192EFB97C61} = {2D12E758-7D0C-47A7-8C84-AC1770C13BA4}
 	EndGlobalSection
 EndGlobal
