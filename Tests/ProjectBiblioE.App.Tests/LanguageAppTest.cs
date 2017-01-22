@@ -12,12 +12,13 @@ using ProjectBiblioE.Domain.Entities;
 namespace ProjectBiblioE.App.Tests
 {
     [TestClass]
-    public class LanguageTests
+    public class LanguageAppTest
     {
         private readonly LanguageAppContract _languageContract;
 
         private string languageCulture = "pt-BR";
         private string languageNome = "Português";
+
         private IList<Language> mockLanguage = 
             new List<Language>
             {
@@ -43,7 +44,7 @@ namespace ProjectBiblioE.App.Tests
                 }
             };
 
-        public LanguageTests()
+        public LanguageAppTest()
         {
             Mock<LanguageAppContract> mockApp = new Mock<LanguageAppContract>();
 
