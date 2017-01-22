@@ -5,22 +5,22 @@ using System.Resources;
 namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
 {
     /// <summary>
-    /// Custom table attributes 
+    /// Custom table attributes. 
     /// </summary>
     public class CustomTableAttributes : Attribute
     {
         /// <summary>
-        /// Variable control to column name
+        /// Variable control to column name.
         /// </summary>
         private string columnName = string.Empty;
 
         /// <summary>
-        /// Object to Resources
+        /// Object to Resources.
         /// </summary>
         private ResourceManager resManager = null;
 
         /// <summary>
-        /// Column header
+        /// Column header.
         /// </summary>
         public string ColumnName
         {
@@ -29,7 +29,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         }
 
         /// <summary>
-        /// Column order in table
+        /// Column order in table.
         /// </summary>
         public int ColumnOrder
         {
@@ -38,7 +38,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         }
 
         /// <summary>
-        /// Column is index
+        /// Column is index.
         /// </summary>
         public bool IsIndex
         {
@@ -47,7 +47,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         }
 
         /// <summary>
-        /// Resource type
+        /// Resource type.
         /// </summary>
         public Type ResourceType
         {
@@ -55,10 +55,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         }
 
         /// <summary>
-        /// Get is the column Index
+        /// Get is the column Index.
         /// </summary>
-        /// <param name="property">Property to get attribute</param>
-        /// <returns>True: Is index / False: not is index</returns>
+        /// <param name="property">Property to get attribute.</param>
+        /// <returns>True: Is index / False: not is index.</returns>
         public static bool ColumnIsIndex(PropertyInfo property)
         {
             bool columnIsIndex = false;
@@ -79,10 +79,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         }
 
         /// <summary>
-        /// Get the column name
+        /// Get the column name.
         /// </summary>
-        /// <param name="property">Property to get attribute</param>
-        /// <returns>Name of column</returns>
+        /// <param name="property">Property to get attribute.</param>
+        /// <returns>Name of column.</returns>
         public static string GetColumnName(PropertyInfo property)
         {
             string columnName = string.Empty;
@@ -103,10 +103,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         }
 
         /// <summary>
-        /// Get column order in table
+        /// Get column order in table.
         /// </summary>
-        /// <param name="property">Property to get attribute</param>
-        /// <returns>Index of column</returns>
+        /// <param name="property">Property to get attribute.</param>
+        /// <returns>Index of column.</returns>
         public static int GetColumnOrder(PropertyInfo property)
         {
             int columnIndex = 0;
@@ -127,10 +127,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         }
 
         /// <summary>
-        /// Get string from resource key
+        /// Get string from resource key.
         /// </summary>
-        /// <param name="resourceKey">Resource key to find string</param>
-        /// <returns>String to resourcekey</returns>
+        /// <param name="resourceKey">Resource key to find string.</param>
+        /// <returns>String to resourcekey.</returns>
         private string getResourceString(string resourceKey)
         {
             if (string.IsNullOrWhiteSpace(resourceKey))

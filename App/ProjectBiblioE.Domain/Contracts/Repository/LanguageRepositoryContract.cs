@@ -6,15 +6,15 @@ using ProjectBiblioE.Domain.Entities;
 namespace ProjectBiblioE.Domain.Contracts.Repository
 {
     /// <summary>
-    /// Contract to language repository
+    /// Contract to language repository.
     /// </summary>
     public interface LanguageRepositoryContract
     {
         /// <summary>
         /// Get languages by filters
         /// </summary>
-        /// <param name="filters">Filters to languages</param>
-        /// <returns>List of languages</returns>
+        /// <param name="filters">Filters to languages.</param>
+        /// <returns>List of languages.</returns>
         List<Language> GetLanguages(LanguageFilter filters);
     }
 }

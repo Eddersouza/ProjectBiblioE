@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 using MetroFramework.Forms;
@@ -18,27 +11,30 @@ using ProjectBiblioE.Presentation.WinForms.ViewModels;
 namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 {
     /// <summary>
-    /// Screen Language
+    /// Screen Language.
     /// </summary>
     public partial class LanguagesScreen : MetroForm, ScreenContract
     {
         /// <summary>
-        /// Constant to name of column Edit
+        /// Constant to name of column Edit.
         /// </summary>
         private const string ColumnNameEdit = "ColumnEdit";
 
         /// <summary>
-        /// Constant to name of column Remove
+        /// Constant to name of column Remove.
         /// </summary>
         private const string ColumnNameRemove = "ColumnRemove";
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public LanguagesScreen()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// Close screeen
+        /// Close screeen.
         /// </summary>
         public void ScreenClose()
         {
@@ -46,7 +42,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         }
 
         /// <summary>
-        /// Load screen data
+        /// Load screen data.
         /// </summary>
         public void ScreenLoad()
         {
@@ -57,9 +53,9 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         }
 
         /// <summary>
-        /// Populate Grid of Genres
+        /// Populate Grid of Genres.
         /// </summary>
-        /// <param name="list">List of genres to populate </param>
+        /// <param name="list">List of genres to populate. </param>
         private void PopulateGridLanguage(List<LanguageViewModel> list)
         {
             if (list != null && list.Count > 0)
@@ -77,10 +73,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         }
 
         /// <summary>
-        /// Get the language by typed text
+        /// Get the language by typed text.
         /// </summary>
-        /// <param name="sender">Textbox txtLanguageSearch</param>
-        /// <param name="e">Arguments of event</param>
+        /// <param name="sender">Textbox txtLanguageSearch.</param>
+        /// <param name="e">Arguments of event.</param>
         private void txtLanguageSearch_KeyUp(object sender, KeyEventArgs e)
         {
             if (txtLanguageSearch.Text.Length > 3)

@@ -1,12 +1,12 @@
 ﻿namespace ProjectBiblioE.Domain.Contracts.Filters
 {
     /// <summary>
-    /// Public class to represent Language Filter
+    /// Public class to represent Language Filter.
     /// </summary>
     public class LanguageFilter
     {
         /// <summary>
-        /// Code culture to language
+        /// Code culture to language.
         /// </summary>
         public string CultureCode
         {
@@ -15,7 +15,7 @@
         }
 
         /// <summary>
-        /// Language Name
+        /// Language Name.
         /// </summary>
         public string Name
         {

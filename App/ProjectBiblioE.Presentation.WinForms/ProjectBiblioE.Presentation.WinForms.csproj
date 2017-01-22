@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ScreenContract.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Attributes\CustomTableAttributes.cs" />
@@ -130,6 +131,10 @@
     <ProjectReference Include="..\ProjectBiblioE.CrossCutting.Resource\ProjectBiblioE.CrossCutting.Resource.csproj">
       <Project>{3410c41c-dc44-4a47-9cb5-8fc1c9aaa133}</Project>
       <Name>ProjectBiblioE.CrossCutting.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBiblioE.Domain\ProjectBiblioE.Domain.csproj">
+      <Project>{ACC55497-AAD5-4A63-8771-46984D65D54A}</Project>
+      <Name>ProjectBiblioE.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

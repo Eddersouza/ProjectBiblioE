@@ -25,21 +25,21 @@ namespace ProjectBiblioE.App.Tests
                 new Language
                 {
                     CultureCode ="pt-BR",
-                    LanguageID =1,
+                    LanguageId =1,
                     Name = "Português"
                 },
 
                 new Language
                 {
                     CultureCode ="en-US",
-                    LanguageID =2,
+                    LanguageId =2,
                     Name = "Inglês - Estados unidos"
                 },
 
                 new Language
                 {
                     CultureCode ="fr-FR",
-                    LanguageID =3,
+                    LanguageId =3,
                     Name = "Françês"
                 }
             };
