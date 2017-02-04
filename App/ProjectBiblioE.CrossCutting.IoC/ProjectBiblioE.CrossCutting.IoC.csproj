@@ -59,6 +59,10 @@
       <Project>{acc55497-aad5-4a63-8771-46984d65d54a}</Project>
       <Name>ProjectBiblioE.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectBiblioE.Infra.Data\ProjectBiblioE.Infra.Data.csproj">
+      <Project>{742CA12E-D18C-40C8-96B7-2AAB5DDC5587}</Project>
+      <Name>ProjectBiblioE.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

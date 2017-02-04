@@ -2,8 +2,10 @@
 
 using ProjectBiblioE.App;
 using ProjectBiblioE.Domain.Contracts.App;
+using ProjectBiblioE.Domain.Contracts.Repository;
 using ProjectBiblioE.Domain.Contracts.Services;
 using ProjectBiblioE.Domain.Services;
+using ProjectBiblioE.Infra.Data.Repositories;
 
 namespace ProjectBiblioE.CrossCutting.IoC
 {
@@ -16,6 +18,7 @@ namespace ProjectBiblioE.CrossCutting.IoC
         {
             Bind(typeof(LanguageAppContract)).To(typeof(LanguageApp));
             Bind(typeof(LanguageServiceContract)).To(typeof(LanguageService));
+            Bind(typeof(LanguageRepositoryContract)).To(typeof(LanguageRepository));
         }
     }
 }

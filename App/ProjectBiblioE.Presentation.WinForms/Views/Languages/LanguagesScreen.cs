@@ -9,6 +9,7 @@ using ProjectBiblioE.Presentation.WinForms.Contracts;
 using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.Utils.Extensions;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
+using ProjectBiblioE.Domain.Contracts.Filters;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 {
@@ -30,7 +31,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// <summary>
         /// Instance of language controller
         /// </summary>
-        private readonly LanguageController _languageControle;
+        private readonly LanguageController _languageController;
 
         /// <summary>
         /// Default constructor.
@@ -39,7 +40,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         {
             InitializeComponent();
             CompositionRoot.Wire(new IoCModule());
-            _languageControle = CompositionRoot.Resolve<LanguageController>();
+            _languageController = CompositionRoot.Resolve<LanguageController>();
         }
 
         /// <summary>
@@ -55,9 +56,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// </summary>
         public void ScreenLoad()
         {
-            List<LanguageViewModel> list = new List<LanguageViewModel>();
-            //list.Add(new LanguageViewModel { LanguageId = 1, Code="en-US", Name = "Inglês" });
-            //list.Add(new LanguageViewModel { LanguageId = 2, Code="pt-BR", Name = "Português" });
+            LanguageFilter filter = new LanguageFilter();
+            List<LanguageViewModel> list
+                = _languageController.GetLanguages(filter);
+
             this.PopulateGridLanguage(list);
         }
 
