@@ -3,8 +3,10 @@ using System.Windows.Forms;
 
 using MetroFramework.Forms;
 
+using ProjectBiblioE.CrossCutting.IoC;
 using ProjectBiblioE.CrossCutting.Resource;
 using ProjectBiblioE.Presentation.WinForms.Contracts;
+using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.Utils.Extensions;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
 
@@ -26,11 +28,18 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         private const string ColumnNameRemove = "ColumnRemove";
 
         /// <summary>
+        /// Instance of language controller
+        /// </summary>
+        private readonly LanguageController _languageControle;
+
+        /// <summary>
         /// Default constructor.
         /// </summary>
         public LanguagesScreen()
         {
             InitializeComponent();
+            CompositionRoot.Wire(new IoCModule());
+            _languageControle = CompositionRoot.Resolve<LanguageController>();
         }
 
         /// <summary>
