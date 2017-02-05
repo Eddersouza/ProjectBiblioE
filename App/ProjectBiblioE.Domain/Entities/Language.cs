@@ -31,15 +31,7 @@
         public string CultureCode
         {
             get; set;
-        }
-
-        /// <summary>
-        /// Index of Language.
-        /// </summary>
-        public int LanguageId
-        {
-            get; set;
-        }
+        }        
 
         /// <summary>
         /// Language Name.

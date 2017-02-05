@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 
 using ProjectBiblioE.Domain.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectBiblioE.Infra.Data.Map
 {
@@ -14,7 +15,7 @@ namespace ProjectBiblioE.Infra.Data.Map
         /// </summary>
         public LanguageMap()
         {
-            this.HasKey(x => x.LanguageId);
+            this.HasKey(x => x.CultureCode);
 
             this.Property(x => x.Name)
                 .IsRequired()
@@ -22,7 +23,8 @@ namespace ProjectBiblioE.Infra.Data.Map
 
             this.Property(x => x.CultureCode)
                 .IsRequired()
-                .HasMaxLength(Language.LanguageCultureCodeMaxLength);
+                .HasMaxLength(Language.LanguageCultureCodeMaxLength)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
         }
     }
 }

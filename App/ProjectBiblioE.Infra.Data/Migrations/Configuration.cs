@@ -7,7 +7,7 @@ namespace ProjectBiblioE.Infra.Data.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<BiblioEContext>
     {
-        private readonly bool _pendingMigrations;
+        //private readonly bool _pendingMigrations;
 
         public Configuration()
         {
@@ -15,16 +15,16 @@ namespace ProjectBiblioE.Infra.Data.Migrations
             // Check if there are migrations pending to run, this can happen if database doesn't exists or if there was any
             //  change in the schema
 
-            var migrator = new DbMigrator(this);
-            _pendingMigrations = migrator.GetPendingMigrations().Any();
+            //var migrator = new DbMigrator(this);
+            //_pendingMigrations = migrator.GetPendingMigrations().Any();
 
-            // If there are pending migrations run migrator.Update() to create/update the database then run the Seed() method to populate
-            //  the data if necessary
-            if (_pendingMigrations)
-            {
-                migrator.Update();
-                Seed(new BiblioEContext());
-            }
+            //// If there are pending migrations run migrator.Update() to create/update the database then run the Seed() method to populate
+            ////  the data if necessary
+            //if (_pendingMigrations)
+            //{
+            //    migrator.Update();
+            //    Seed(new BiblioEContext());
+            //}
         }
 
         protected override void Seed(BiblioEContext context)

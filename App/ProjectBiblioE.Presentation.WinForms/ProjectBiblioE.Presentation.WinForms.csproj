@@ -79,6 +79,12 @@
     <Compile Include="Views\Genres\GenresScreen.Designer.cs">
       <DependentUpon>GenresScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Languages\LanguageAddEditScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Languages\LanguageAddEditScreen.Designer.cs">
+      <DependentUpon>LanguageAddEditScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Languages\LanguagesScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Genres\GenresScreen.resx">
       <DependentUpon>GenresScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Languages\LanguageAddEditScreen.resx">
+      <DependentUpon>LanguageAddEditScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Languages\LanguagesScreen.resx">
       <DependentUpon>LanguagesScreen.cs</DependentUpon>

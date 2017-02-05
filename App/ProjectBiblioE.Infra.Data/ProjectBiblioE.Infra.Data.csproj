@@ -58,10 +58,6 @@
   <ItemGroup>
     <Compile Include="EF\BiblioEContext.cs" />
     <Compile Include="Map\LanguageMap.cs" />
-    <Compile Include="Migrations\201702042331397_DBInitial.cs" />
-    <Compile Include="Migrations\201702042331397_DBInitial.Designer.cs">
-      <DependentUpon>201702042331397_DBInitial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\LanguageRepository.cs" />
@@ -71,11 +67,6 @@
       <Project>{acc55497-aad5-4a63-8771-46984d65d54a}</Project>
       <Name>ProjectBiblioE.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702042331397_DBInitial.resx">
-      <DependentUpon>201702042331397_DBInitial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
