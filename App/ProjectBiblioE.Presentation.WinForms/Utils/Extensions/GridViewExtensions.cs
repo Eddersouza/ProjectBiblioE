@@ -84,11 +84,11 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Extensions
 
             foreach (var property in properties)
             {
-                bool isIndex = CustomTableAttributes.ColumnIsIndex(property);
+                bool isFit = CustomTableAttributes.ColumnIsFit(property);
                 int columnOrder = CustomTableAttributes.GetColumnOrder(property);
                 string columnName = CustomTableAttributes.GetColumnName(property);
 
-                if (isIndex)
+                if (isFit)
                 {
                     grid.Columns[property.Name].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 }

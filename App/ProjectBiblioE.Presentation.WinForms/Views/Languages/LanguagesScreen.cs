@@ -61,6 +61,8 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                 = _languageController.GetLanguages(filter);
 
             this.PopulateGridLanguage(list);
+
+            this.Cursor = Cursors.Default;
         }
 
         /// <summary>
@@ -84,16 +86,51 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         }
 
         /// <summary>
-        /// Get the language by typed text.
+        /// Get the language by typed code text.
         /// </summary>
         /// <param name="sender">Textbox txtLanguageSearch.</param>
         /// <param name="e">Arguments of event.</param>
         private void txtLanguageSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            if (txtLanguageSearch.Text.Length > 3)
-            {
+            LanguageFilter filter = new LanguageFilter();
 
+            string languageCode = txtLanguageSearch.Text;
+            string languageName = txtLanguageNameSearch.Text;
+
+            if (languageCode.Length > 2)
+            {
+                filter.CultureCode = languageCode;
+                filter.Name = languageName;
             }
+
+            List<LanguageViewModel> list
+                = _languageController.GetLanguages(filter);
+
+            this.PopulateGridLanguage(list);
+        }
+
+        /// <summary>
+        /// Get the language by typed name.
+        /// </summary>
+        /// <param name="sender">Textbox txtLanguageNameSearch.</param>
+        /// <param name="e">Arguments of event.</param>
+        private void txtLanguageNameSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            LanguageFilter filter = new LanguageFilter();
+
+            string languageCode = txtLanguageSearch.Text;
+            string languageName = txtLanguageNameSearch.Text;
+
+            if (txtLanguageNameSearch.Text.Length > 2)
+            {
+                filter.CultureCode = languageCode;
+                filter.Name = languageName;
+            }
+
+            List<LanguageViewModel> list
+                 = _languageController.GetLanguages(filter);
+
+            this.PopulateGridLanguage(list);
         }
     }
 }

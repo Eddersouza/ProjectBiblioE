@@ -31,12 +31,12 @@ namespace ProjectBiblioE.Infra.Data.Repositories
         /// <returns>Filtered query.</returns>
         public IQueryable<Language> ApplyFilter(IQueryable<Language> query, LanguageFilter filter)
         {
-            if (string.IsNullOrEmpty(filter.CultureCode))
+            if (!string.IsNullOrEmpty(filter.CultureCode))
             {
                 query = query.Where(x => x.CultureCode.Contains(filter.CultureCode));
             }
 
-            if (string.IsNullOrEmpty(filter.Name))
+            if (!string.IsNullOrEmpty(filter.Name))
             {
                 query = query.Where(x => x.Name.Contains(filter.Name));
             }

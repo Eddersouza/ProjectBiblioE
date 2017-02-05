@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBoxLanguageSearch = new System.Windows.Forms.GroupBox();
+            this.txtLanguageNameSearch = new MetroFramework.Controls.MetroTextBox();
+            this.lblLanguageName = new MetroFramework.Controls.MetroLabel();
             this.txtLanguageSearch = new MetroFramework.Controls.MetroTextBox();
             this.lblLanguageSearch = new MetroFramework.Controls.MetroLabel();
             this.BtnLanguageNew = new MetroFramework.Controls.MetroButton();
@@ -42,14 +44,56 @@
             // 
             // grpBoxLanguageSearch
             // 
+            this.grpBoxLanguageSearch.Controls.Add(this.txtLanguageNameSearch);
+            this.grpBoxLanguageSearch.Controls.Add(this.lblLanguageName);
             this.grpBoxLanguageSearch.Controls.Add(this.txtLanguageSearch);
             this.grpBoxLanguageSearch.Controls.Add(this.lblLanguageSearch);
             this.grpBoxLanguageSearch.Location = new System.Drawing.Point(23, 63);
             this.grpBoxLanguageSearch.Name = "grpBoxLanguageSearch";
-            this.grpBoxLanguageSearch.Size = new System.Drawing.Size(654, 52);
+            this.grpBoxLanguageSearch.Size = new System.Drawing.Size(654, 82);
             this.grpBoxLanguageSearch.TabIndex = 0;
             this.grpBoxLanguageSearch.TabStop = false;
             this.grpBoxLanguageSearch.Text = "Busca";
+            // 
+            // txtLanguageNameSearch
+            // 
+            // 
+            // 
+            // 
+            this.txtLanguageNameSearch.CustomButton.Image = null;
+            this.txtLanguageNameSearch.CustomButton.Location = new System.Drawing.Point(538, 1);
+            this.txtLanguageNameSearch.CustomButton.Name = "";
+            this.txtLanguageNameSearch.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtLanguageNameSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLanguageNameSearch.CustomButton.TabIndex = 1;
+            this.txtLanguageNameSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLanguageNameSearch.CustomButton.UseSelectable = true;
+            this.txtLanguageNameSearch.CustomButton.Visible = false;
+            this.txtLanguageNameSearch.Lines = new string[0];
+            this.txtLanguageNameSearch.Location = new System.Drawing.Point(74, 49);
+            this.txtLanguageNameSearch.MaxLength = 32767;
+            this.txtLanguageNameSearch.Name = "txtLanguageNameSearch";
+            this.txtLanguageNameSearch.PasswordChar = '\0';
+            this.txtLanguageNameSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLanguageNameSearch.SelectedText = "";
+            this.txtLanguageNameSearch.SelectionLength = 0;
+            this.txtLanguageNameSearch.SelectionStart = 0;
+            this.txtLanguageNameSearch.ShortcutsEnabled = true;
+            this.txtLanguageNameSearch.Size = new System.Drawing.Size(560, 23);
+            this.txtLanguageNameSearch.TabIndex = 3;
+            this.txtLanguageNameSearch.UseSelectable = true;
+            this.txtLanguageNameSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLanguageNameSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLanguageNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtLanguageNameSearch_KeyUp);
+            // 
+            // lblLanguageName
+            // 
+            this.lblLanguageName.AutoSize = true;
+            this.lblLanguageName.Location = new System.Drawing.Point(13, 49);
+            this.lblLanguageName.Name = "lblLanguageName";
+            this.lblLanguageName.Size = new System.Drawing.Size(46, 19);
+            this.lblLanguageName.TabIndex = 2;
+            this.lblLanguageName.Text = "Nome";
             // 
             // txtLanguageSearch
             // 
@@ -87,9 +131,9 @@
             this.lblLanguageSearch.AutoSize = true;
             this.lblLanguageSearch.Location = new System.Drawing.Point(18, 20);
             this.lblLanguageSearch.Name = "lblLanguageSearch";
-            this.lblLanguageSearch.Size = new System.Drawing.Size(50, 19);
+            this.lblLanguageSearch.Size = new System.Drawing.Size(41, 19);
             this.lblLanguageSearch.TabIndex = 0;
-            this.lblLanguageSearch.Text = "Idioma";
+            this.lblLanguageSearch.Text = "Code";
             // 
             // BtnLanguageNew
             // 
@@ -133,7 +177,7 @@
             this.gridLanguages.EnableHeadersVisualStyles = false;
             this.gridLanguages.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridLanguages.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridLanguages.Location = new System.Drawing.Point(23, 131);
+            this.gridLanguages.Location = new System.Drawing.Point(23, 151);
             this.gridLanguages.MultiSelect = false;
             this.gridLanguages.Name = "gridLanguages";
             this.gridLanguages.ReadOnly = true;
@@ -149,14 +193,14 @@
             this.gridLanguages.RowHeadersVisible = false;
             this.gridLanguages.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridLanguages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLanguages.Size = new System.Drawing.Size(654, 150);
+            this.gridLanguages.Size = new System.Drawing.Size(654, 226);
             this.gridLanguages.TabIndex = 2;
             // 
             // LanguagesScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 300);
+            this.ClientSize = new System.Drawing.Size(700, 400);
             this.Controls.Add(this.gridLanguages);
             this.Controls.Add(this.BtnLanguageNew);
             this.Controls.Add(this.grpBoxLanguageSearch);
@@ -176,5 +220,7 @@
         private MetroFramework.Controls.MetroLabel lblLanguageSearch;
         private MetroFramework.Controls.MetroButton BtnLanguageNew;
         private MetroFramework.Controls.MetroGrid gridLanguages;
+        private MetroFramework.Controls.MetroLabel lblLanguageName;
+        private MetroFramework.Controls.MetroTextBox txtLanguageNameSearch;
     }
 }

@@ -40,7 +40,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         /// <summary>
         /// Column is index.
         /// </summary>
-        public bool IsIndex
+        public bool FitColumn
         {
             get;
             set;
@@ -59,7 +59,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
         /// </summary>
         /// <param name="property">Property to get attribute.</param>
         /// <returns>True: Is index / False: not is index.</returns>
-        public static bool ColumnIsIndex(PropertyInfo property)
+        public static bool ColumnIsFit(PropertyInfo property)
         {
             bool columnIsIndex = false;
 
@@ -71,7 +71,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Utils.Attributes
 
                 if (customAtribute != null)
                 {
-                    columnIsIndex = customAtribute.IsIndex;
+                    columnIsIndex = customAtribute.FitColumn;
                 }
             }
 

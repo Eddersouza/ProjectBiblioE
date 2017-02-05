@@ -39,6 +39,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
             // TileGenres
             // 
             this.TileGenres.ActiveControl = null;
+            this.TileGenres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TileGenres.Location = new System.Drawing.Point(23, 72);
             this.TileGenres.Name = "TileGenres";
             this.TileGenres.Size = new System.Drawing.Size(125, 125);
@@ -54,6 +55,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
             // TileLanguages
             // 
             this.TileLanguages.ActiveControl = null;
+            this.TileLanguages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TileLanguages.Location = new System.Drawing.Point(154, 72);
             this.TileLanguages.Name = "TileLanguages";
             this.TileLanguages.Size = new System.Drawing.Size(125, 125);
@@ -69,6 +71,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
             // TileFilms
             // 
             this.TileFilms.ActiveControl = null;
+            this.TileFilms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TileFilms.Location = new System.Drawing.Point(285, 72);
             this.TileFilms.Name = "TileFilms";
             this.TileFilms.Size = new System.Drawing.Size(125, 125);

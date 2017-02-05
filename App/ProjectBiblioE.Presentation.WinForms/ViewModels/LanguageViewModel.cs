@@ -30,7 +30,7 @@ namespace ProjectBiblioE.Presentation.WinForms.ViewModels
         /// <summary>
         /// Language culture code. 
         /// </summary>
-        [CustomTableAttributes(ColumnName = "LanguageViewModel_Code", ColumnOrder = 1, ResourceType = typeof(Resources))]
+        [CustomTableAttributes(ColumnName = "LanguageViewModel_Code", ColumnOrder = 1, FitColumn = true, ResourceType = typeof(Resources))]
         public string CultureCode
         {
             get; set;
@@ -39,7 +39,7 @@ namespace ProjectBiblioE.Presentation.WinForms.ViewModels
         /// <summary>
         /// Language Id.
         /// </summary>
-        [CustomTableAttributes(ColumnName = "LanguageViewModel_LanguageId", ColumnOrder = 0, IsIndex = true, ResourceType = typeof(Resources))]
+        [CustomTableAttributes(ColumnName = "LanguageViewModel_LanguageId", ColumnOrder = 0, FitColumn = true, ResourceType = typeof(Resources))]
         public int LanguageId
         {
             get; set;
