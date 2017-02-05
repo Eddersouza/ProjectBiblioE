@@ -6,15 +6,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
-using ProjectBiblioE.Domain.Contracts.Services;
+using ProjectBiblioE.Domain.Contracts.Repository;
 using ProjectBiblioE.Domain.Entities;
 
-namespace ProjectBiblioE.Domain.Tests
+namespace ProjectBiblioE.Infra.Data.Tests
 {
     [TestClass]
-    public class LanguageServiceTest
+    public class LanguageRepositoryTests
     {
-        private readonly LanguageServiceContract _languageContract;
+        private readonly LanguageRepositoryContract _languageContract;
 
         private string languageCulture = "pt-BR";
         private string languageNome = "Português";
@@ -43,9 +43,9 @@ namespace ProjectBiblioE.Domain.Tests
                 }
           };
 
-        public LanguageServiceTest()
+        public LanguageRepositoryTests()
         {
-            Mock<LanguageServiceContract> mockApp = new Mock<LanguageServiceContract>();
+            Mock<LanguageRepositoryContract> mockApp = new Mock<LanguageRepositoryContract>();
 
             mockApp.Setup(
                 lg => lg
