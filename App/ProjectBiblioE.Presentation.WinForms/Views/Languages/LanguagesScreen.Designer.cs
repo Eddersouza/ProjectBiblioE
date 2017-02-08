@@ -146,6 +146,7 @@
             this.BtnLanguageNew.Text = "Novo Idioma";
             this.BtnLanguageNew.UseSelectable = true;
             this.BtnLanguageNew.UseStyleColors = true;
+            this.BtnLanguageNew.Click += new System.EventHandler(this.BtnLanguageNew_Click);
             // 
             // gridLanguages
             // 

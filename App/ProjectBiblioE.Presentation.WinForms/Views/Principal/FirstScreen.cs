@@ -24,22 +24,33 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
 
         private void TileGenres_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+
             GenresScreen genresScreen = new GenresScreen();
             genresScreen.ShowDialog();
+
+            this.Cursor = Cursors.Default;
         }
 
         private void TileLanguages_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
+
             LanguagesScreen languagenScreen = new LanguagesScreen();
             languagenScreen.ScreenLoad();
             languagenScreen.ShowDialog();
+
+            this.Cursor = Cursors.Default;
         }
 
         private void TileFilms_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+
             FilmsScreen filmsScreen = new FilmsScreen();
             filmsScreen.ShowDialog();
+
+            this.Cursor = Cursors.Default;
         }
     }
 }

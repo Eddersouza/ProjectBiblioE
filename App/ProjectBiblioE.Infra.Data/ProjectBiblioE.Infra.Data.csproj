@@ -58,6 +58,10 @@
   <ItemGroup>
     <Compile Include="EF\BiblioEContext.cs" />
     <Compile Include="Map\LanguageMap.cs" />
+    <Compile Include="Migrations\201702052055272_DbInitial.cs" />
+    <Compile Include="Migrations\201702052055272_DbInitial.Designer.cs">
+      <DependentUpon>201702052055272_DbInitial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\LanguageRepository.cs" />
@@ -71,6 +75,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702052055272_DbInitial.resx">
+      <DependentUpon>201702052055272_DbInitial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -132,5 +132,18 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 
             this.PopulateGridLanguage(list);
         }
+
+        /// <summary>
+        /// Event of click btn new language.
+        /// </summary>
+        /// <param name="sender">Button new language.</param>
+        /// <param name="e">Arguments of event.</param>
+        private void BtnLanguageNew_Click(object sender, System.EventArgs e)
+        {
+            LanguageAddEditScreen languageNewScreen
+                = new LanguageAddEditScreen(_languageController);
+
+            languageNewScreen.ShowDialog();
+        }
     }
 }

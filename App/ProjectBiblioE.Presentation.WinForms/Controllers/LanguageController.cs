@@ -46,5 +46,14 @@ namespace ProjectBiblioE.Presentation.WinForms.Controllers
 
             return languages;
         }
+
+        /// <summary>
+        /// Save language
+        /// </summary>
+        /// <param name="language">Language to save</param>
+        public void Save(LanguageViewModel language)
+        {
+
+        }
     }
 }
