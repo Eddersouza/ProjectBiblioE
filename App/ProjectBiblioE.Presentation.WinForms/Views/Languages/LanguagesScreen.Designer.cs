@@ -138,6 +138,7 @@
             // BtnLanguageNew
             // 
             this.BtnLanguageNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnLanguageNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLanguageNew.Location = new System.Drawing.Point(115, 28);
             this.BtnLanguageNew.Name = "BtnLanguageNew";
             this.BtnLanguageNew.Size = new System.Drawing.Size(112, 23);

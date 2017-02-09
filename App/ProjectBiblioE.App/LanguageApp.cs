@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using ProjectBiblioE.Domain.Contracts.App;
 using ProjectBiblioE.Domain.Contracts.Filters;
@@ -34,6 +35,15 @@ namespace ProjectBiblioE.App
         public List<Language> GetLanguages(LanguageFilter filters)
         {
             return this._languageContract.GetLanguages(filters);
+        }
+
+        /// <summary>
+        /// Save Language.
+        /// </summary>
+        /// <param name="language">Language to save.</param>
+        public void Save(Language language)
+        {
+            this._languageContract.Save(language);
         }
     }
 }

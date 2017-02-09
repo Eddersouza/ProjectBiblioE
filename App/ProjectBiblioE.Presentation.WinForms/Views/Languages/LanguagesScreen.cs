@@ -143,6 +143,8 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             LanguageAddEditScreen languageNewScreen
                 = new LanguageAddEditScreen(_languageController);
 
+            languageNewScreen.PrincipalScreen = this;
+
             languageNewScreen.ShowDialog();
         }
     }

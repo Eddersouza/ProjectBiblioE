@@ -53,7 +53,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Controllers
         /// <param name="language">Language to save</param>
         public void Save(LanguageViewModel language)
         {
-
+            this._languageApp.Save(language.ToLanguageEntity());
         }
     }
 }

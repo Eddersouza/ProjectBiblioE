@@ -22,6 +22,12 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
     public partial class LanguageAddEditScreen : MetroForm, ScreenContract
     {
         private readonly LanguageController _languageController;
+
+        /// <summary>
+        /// Instance of principal screen(to execute actions).
+        /// </summary>
+        public ScreenContract PrincipalScreen { get; set; }
+
         /// <summary>
         /// Default Constructor.
         /// </summary>
@@ -82,6 +88,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             view.Name = txtLanguageName.Text;
 
             this._languageController.Save(view);
+
+            this.PrincipalScreen.ScreenLoad();
+
+            this.ScreenClose();
         }
     }
 }

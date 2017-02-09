@@ -16,5 +16,11 @@ namespace ProjectBiblioE.Domain.Contracts.App
         /// <param name="filters">Filters to languages.</param>
         /// <returns>List of languages.</returns>
         List<Language> GetLanguages(LanguageFilter filters);
+
+        /// <summary>
+        /// Save Language.
+        /// </summary>
+        /// <param name="language">Language to save.</param>
+        void Save(Language language);
     }
 }

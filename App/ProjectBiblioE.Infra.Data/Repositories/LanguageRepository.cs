@@ -55,5 +55,15 @@ namespace ProjectBiblioE.Infra.Data.Repositories
 
             return languages;
         }
+
+        /// <summary>
+        /// Save Language.
+        /// </summary>
+        /// <param name="language">Language to save.</param>
+        public void Save(Language language)
+        {
+            _context.Languages.Add(language);
+            _context.SaveChanges();
+        }
     }
 }
