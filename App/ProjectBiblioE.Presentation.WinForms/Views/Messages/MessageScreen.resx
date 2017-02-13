@@ -117,50 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icon_edit_16_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_edit_16_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_Film_64_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_Film_64_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_Genre_64_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_Genre_64_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_Language_64_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_Language_64_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_trash_16_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_trash_16_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GridViewExtensions_Edit" xml:space="preserve">
-    <value>Editar {0}</value>
-  </data>
-  <data name="GridViewExtensions_Remove" xml:space="preserve">
-    <value>Remover {0}</value>
-  </data>
-  <data name="LanguageViewModel_Code" xml:space="preserve">
-    <value>Código</value>
-  </data>
-  <data name="LanguageViewModel_LanguageId" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="LanguageViewModel_Name" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="Language_Module" xml:space="preserve">
-    <value>Idioma</value>
-  </data>
-  <data name="icon_message_alert_yellow_128_28" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_message_alert_yellow_128_28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_message_close_rede_128_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_message_close_rede_128_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_message_confirm_blue_128_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_message_confirm_blue_128_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_message_ok_green_128_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icon_message_ok_green_128_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="metroStyleManagerMessageScreen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
