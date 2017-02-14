@@ -203,5 +203,32 @@ namespace ProjectBiblioE.CrossCutting.Resource {
                 return ResourceManager.GetString("LanguageViewModel_Name", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BiblioE - Confirmação.
+        /// </summary>
+        public static string MessageScreenTitleConfirm {
+            get {
+                return ResourceManager.GetString("MessageScreenTitleConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BiblioE - Erro.
+        /// </summary>
+        public static string MessageScreenTitleError {
+            get {
+                return ResourceManager.GetString("MessageScreenTitleError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BiblioE - Successo.
+        /// </summary>
+        public static string MessageScreenTitleSucess {
+            get {
+                return ResourceManager.GetString("MessageScreenTitleSucess", resourceCulture);
+            }
+        }
     }
 }

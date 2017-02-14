@@ -91,6 +91,12 @@
     <Compile Include="Views\Languages\LanguagesScreen.Designer.cs">
       <DependentUpon>LanguagesScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Messages\MessageScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\MessageScreen.Designer.cs">
+      <DependentUpon>MessageScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Principal\FirstScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Languages\LanguagesScreen.resx">
       <DependentUpon>LanguagesScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\MessageScreen.resx">
+      <DependentUpon>MessageScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Principal\FirstScreen.resx">
       <DependentUpon>FirstScreen.cs</DependentUpon>

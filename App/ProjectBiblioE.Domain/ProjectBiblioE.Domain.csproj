@@ -38,6 +38,7 @@
     <Compile Include="Contracts\Repository\LanguageRepositoryContract.cs" />
     <Compile Include="Contracts\Services\LanguageServiceContract.cs" />
     <Compile Include="Entities\Language.cs" />
+    <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LanguageService.cs" />
   </ItemGroup>
