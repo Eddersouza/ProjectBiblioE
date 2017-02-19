@@ -93,6 +93,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
             this.Controls.Add(this.TileLanguages);
             this.Controls.Add(this.TileGenres);
             this.Name = "FirstScreen";
+            this.Resizable = false;
             this.Text = "BiblioE";
             this.ResumeLayout(false);
 

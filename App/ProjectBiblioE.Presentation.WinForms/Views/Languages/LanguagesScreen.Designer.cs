@@ -207,6 +207,7 @@
             this.Controls.Add(this.BtnLanguageNew);
             this.Controls.Add(this.grpBoxLanguageSearch);
             this.Name = "LanguagesScreen";
+            this.Resizable = false;
             this.Text = "Idiomas";
             this.grpBoxLanguageSearch.ResumeLayout(false);
             this.grpBoxLanguageSearch.PerformLayout();

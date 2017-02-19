@@ -165,6 +165,7 @@
             this.Controls.Add(this.txtLanguageCode);
             this.Controls.Add(this.lblCodeLanguage);
             this.Name = "LanguageAddEditScreen";
+            this.Resizable = false;
             this.Text = "LanguageAddEditScreen";
             this.ResumeLayout(false);
             this.PerformLayout();

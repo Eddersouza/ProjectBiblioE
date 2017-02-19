@@ -5,11 +5,11 @@ using MetroFramework.Forms;
 
 using ProjectBiblioE.CrossCutting.IoC;
 using ProjectBiblioE.CrossCutting.Resource;
+using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Presentation.WinForms.Contracts;
 using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.Utils.Extensions;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
-using ProjectBiblioE.Domain.Contracts.Filters;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 {
@@ -66,6 +66,21 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         }
 
         /// <summary>
+        /// Event of click btn new language.
+        /// </summary>
+        /// <param name="sender">Button new language.</param>
+        /// <param name="e">Arguments of event.</param>
+        private void BtnLanguageNew_Click(object sender, System.EventArgs e)
+        {
+            LanguageAddEditScreen languageNewScreen
+                = new LanguageAddEditScreen(_languageController);
+
+            languageNewScreen.PrincipalScreen = this;
+
+            languageNewScreen.ShowDialog();
+        }
+
+        /// <summary>
         /// Populate Grid of Genres.
         /// </summary>
         /// <param name="list">List of genres to populate. </param>
@@ -83,30 +98,6 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             gridLanguages.CreateColumnsByView(typeof(LanguageViewModel));
             gridLanguages.AddEditColumn(Resources.Language_Module, ColumnNameEdit);
             gridLanguages.AddRemoveColumn(Resources.Language_Module, ColumnNameRemove);
-        }
-
-        /// <summary>
-        /// Get the language by typed code text.
-        /// </summary>
-        /// <param name="sender">Textbox txtLanguageSearch.</param>
-        /// <param name="e">Arguments of event.</param>
-        private void txtLanguageSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            LanguageFilter filter = new LanguageFilter();
-
-            string languageCode = txtLanguageSearch.Text;
-            string languageName = txtLanguageNameSearch.Text;
-
-            if (languageCode.Length > 2)
-            {
-                filter.CultureCode = languageCode;
-                filter.Name = languageName;
-            }
-
-            List<LanguageViewModel> list
-                = _languageController.GetLanguages(filter);
-
-            this.PopulateGridLanguage(list);
         }
 
         /// <summary>
@@ -134,18 +125,27 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         }
 
         /// <summary>
-        /// Event of click btn new language.
+        /// Get the language by typed code text.
         /// </summary>
-        /// <param name="sender">Button new language.</param>
+        /// <param name="sender">Textbox txtLanguageSearch.</param>
         /// <param name="e">Arguments of event.</param>
-        private void BtnLanguageNew_Click(object sender, System.EventArgs e)
+        private void txtLanguageSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            LanguageAddEditScreen languageNewScreen
-                = new LanguageAddEditScreen(_languageController);
+            LanguageFilter filter = new LanguageFilter();
 
-            languageNewScreen.PrincipalScreen = this;
+            string languageCode = txtLanguageSearch.Text;
+            string languageName = txtLanguageNameSearch.Text;
 
-            languageNewScreen.ShowDialog();
+            if (languageCode.Length > 2)
+            {
+                filter.CultureCode = languageCode;
+                filter.Name = languageName;
+            }
+
+            List<LanguageViewModel> list
+                = _languageController.GetLanguages(filter);
+
+            this.PopulateGridLanguage(list);
         }
     }
 }

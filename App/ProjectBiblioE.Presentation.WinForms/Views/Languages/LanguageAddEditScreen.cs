@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 using MetroFramework.Forms;
 
+using ProjectBiblioE.Domain.Enums;
 using ProjectBiblioE.Presentation.WinForms.Contracts;
 using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
+using ProjectBiblioE.Presentation.WinForms.Views.Messages;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 {
@@ -24,11 +18,6 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         private readonly LanguageController _languageController;
 
         /// <summary>
-        /// Instance of principal screen(to execute actions).
-        /// </summary>
-        public ScreenContract PrincipalScreen { get; set; }
-
-        /// <summary>
         /// Default Constructor.
         /// </summary>
         public LanguageAddEditScreen(LanguageController controller)
@@ -37,6 +26,14 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             _languageController = controller;
 
             this.Text = "Novo Idioma";
+        }
+
+        /// <summary>
+        /// Instance of principal screen(to execute actions).
+        /// </summary>
+        public ScreenContract PrincipalScreen
+        {
+            get; set;
         }
 
         /// <summary>
@@ -90,6 +87,11 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             this._languageController.Save(view);
 
             this.PrincipalScreen.ScreenLoad();
+
+            PrincipalScreen.ScreenLoad();
+
+            MessageScreen mess = new MessageScreen(MessageType.Success, "Idioma Salvo com Sucesso!");
+            mess.ShowDialog();
 
             this.ScreenClose();
         }

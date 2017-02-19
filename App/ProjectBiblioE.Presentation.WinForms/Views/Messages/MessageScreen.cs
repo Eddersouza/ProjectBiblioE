@@ -1,15 +1,9 @@
-﻿using MetroFramework.Forms;
+﻿using System;
+
+using MetroFramework.Forms;
+
 using ProjectBiblioE.CrossCutting.Resource;
 using ProjectBiblioE.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Messages
 {
@@ -24,18 +18,26 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Messages
                 case MessageType.Confirm:
                     this.Text = Resources.MessageScreenTitleConfirm;
                     this.imgMessage.Image = Resources.icon_message_confirm_blue_128_128;
+                    this.lblMessageText.Text = messageText;
                     break;
                 case MessageType.Error:
                     this.Text = Resources.MessageScreenTitleError;
                     this.imgMessage.Image = Resources.icon_message_close_rede_128_128;
+                    this.lblMessageText.Text = messageText;
                     break;
                 case MessageType.Success:
                     this.Text = Resources.MessageScreenTitleSucess;
                     this.imgMessage.Image = Resources.icon_message_ok_green_128_128;
+                    this.lblMessageText.Text = messageText;
                     break;
                 default:
                     break;
             }
+        }
+
+        private void btnMessageOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
