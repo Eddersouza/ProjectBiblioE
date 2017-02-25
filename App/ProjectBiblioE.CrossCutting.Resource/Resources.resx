@@ -172,4 +172,7 @@
   <data name="MessageScreenTitleSucess" xml:space="preserve">
     <value>BiblioE - Successo</value>
   </data>
+  <data name="MSG_Success_Saved" xml:space="preserve">
+    <value>{0} salvo com sucesso!</value>
+  </data>
 </root>

@@ -230,5 +230,14 @@ namespace ProjectBiblioE.CrossCutting.Resource {
                 return ResourceManager.GetString("MessageScreenTitleSucess", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} salvo com sucesso!.
+        /// </summary>
+        public static string MSG_Success_Saved {
+            get {
+                return ResourceManager.GetString("MSG_Success_Saved", resourceCulture);
+            }
+        }
     }
 }

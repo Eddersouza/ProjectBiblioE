@@ -24,21 +24,18 @@ namespace ProjectBiblioE.Domain.Tests
                 new Language
                 {
                     CultureCode ="pt-BR",
-                    LanguageId =1,
                     Name = "Português"
                 },
 
                 new Language
                 {
                     CultureCode ="en-US",
-                    LanguageId =2,
                     Name = "Inglês - Estados unidos"
                 },
 
                 new Language
                 {
                     CultureCode ="fr-FR",
-                    LanguageId =3,
                     Name = "Françês"
                 }
           };
