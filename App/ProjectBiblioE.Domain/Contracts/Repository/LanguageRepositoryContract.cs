@@ -21,6 +21,6 @@ namespace ProjectBiblioE.Domain.Contracts.Repository
         /// Save Language.
         /// </summary>
         /// <param name="language">Language to save.</param>
-        void Save(Language language);
+        bool Save(Language language);
     }
 }

@@ -41,9 +41,9 @@ namespace ProjectBiblioE.App
         /// Save Language.
         /// </summary>
         /// <param name="language">Language to save.</param>
-        public void Save(Language language)
+        public bool Save(Language language)
         {
-            this._languageContract.Save(language);
-        }
+            return this._languageContract.Save(language);
+        }        
     }
 }

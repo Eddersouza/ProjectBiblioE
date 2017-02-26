@@ -41,9 +41,9 @@ namespace ProjectBiblioE.Domain.Services
         /// Save Language.
         /// </summary>
         /// <param name="language">Language to save.</param>
-        public void Save(Language language)
+        public bool Save(Language language)
         {
-            this._languageRepository.Save(language);
+            return this._languageRepository.Save(language);
         }
     }
 }

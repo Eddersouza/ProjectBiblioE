@@ -60,10 +60,12 @@ namespace ProjectBiblioE.Infra.Data.Repositories
         /// Save Language.
         /// </summary>
         /// <param name="language">Language to save.</param>
-        public void Save(Language language)
+        public bool Save(Language language)
         {
             _context.Languages.Add(language);
             _context.SaveChanges();
+
+            return true;
         }
     }
 }

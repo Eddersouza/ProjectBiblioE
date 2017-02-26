@@ -8,6 +8,8 @@ using Moq;
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Services;
 using ProjectBiblioE.Domain.Entities;
+using ProjectBiblioE.Domain.Services;
+using ProjectBiblioE.Domain.Contracts.Repository;
 
 namespace ProjectBiblioE.Domain.Tests
 {
@@ -42,7 +44,7 @@ namespace ProjectBiblioE.Domain.Tests
 
         public LanguageServiceTest()
         {
-            Mock<LanguageServiceContract> mockApp = new Mock<LanguageServiceContract>();
+            Mock<LanguageRepositoryContract> mockApp = new Mock<LanguageRepositoryContract>();
 
             mockApp.Setup(
                 lg => lg
@@ -68,7 +70,7 @@ namespace ProjectBiblioE.Domain.Tests
                     return list;
                 });
 
-            this._languageContract = mockApp.Object;
+            this._languageContract = new LanguageService(mockApp.Object);
         }
 
         [TestMethod]
