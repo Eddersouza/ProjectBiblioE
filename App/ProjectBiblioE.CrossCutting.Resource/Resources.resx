@@ -181,4 +181,13 @@
   <data name="MessageScreenTitleAlert" xml:space="preserve">
     <value>BiblioE - Alerta</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="LanguageNew" xml:space="preserve">
+    <value>Novo Idioma</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Idiomas</value>
+  </data>
 </root>

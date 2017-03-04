@@ -39,6 +39,7 @@
     <Compile Include="Contracts\Services\LanguageServiceContract.cs" />
     <Compile Include="Contracts\Utils\MessageContract.cs" />
     <Compile Include="Entities\Language.cs" />
+    <Compile Include="Enums\LabelText.cs" />
     <Compile Include="Enums\MessageBiblioE.cs" />
     <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Exceptions\BiblioEException.cs" />

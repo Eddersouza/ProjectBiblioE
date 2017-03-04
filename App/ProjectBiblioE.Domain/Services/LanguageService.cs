@@ -19,8 +19,7 @@ namespace ProjectBiblioE.Domain.Services
         /// Instance of language repository.
         /// </summary>
         private readonly LanguageRepositoryContract _languageRepository;
-
-
+        
         /// <summary>
         /// Instance of language repository.
         /// </summary>
@@ -68,7 +67,7 @@ namespace ProjectBiblioE.Domain.Services
                     = this._messageContract
                     .MountMessage(
                         MessageBiblioE.MSG_Alredy_Exists,
-                        "Idioma",
+                        LabelText.Language.ToString(),
                         language.CultureCode);
 
                 throw new BiblioEException(messageAlreadExists);

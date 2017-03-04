@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MessageBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MessageBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectBiblioE.CrossCutting.Resource\ProjectBiblioE.CrossCutting.Resource.csproj">

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Resources;
 
 using MetroFramework.Forms;
 
@@ -19,20 +20,23 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
     {
         private readonly LanguageController _languageController;
         private readonly MessageContract _messageContract;
+        private readonly ResourceManager _resources;
 
         /// <summary>
         /// Default Constructor.
         /// </summary>
         public LanguageAddEditScreen(
             LanguageController controller,
-            MessageContract message)
+            MessageContract message,
+            ResourceManager resources)
         {
             InitializeComponent();
 
             _languageController = controller;
             _messageContract = message;
+            _resources = resources;
 
-            this.Text = "Novo Idioma";
+            this.Text = _resources.GetString(LabelText.LanguageNew.ToString());
         }
 
         /// <summary>
@@ -166,7 +170,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                     = this._messageContract
                         .MountMessage(
                         MessageBiblioE.MSG_Success_Saved,
-                        "Idioma",
+                        _resources.GetString(LabelText.Language.ToString()),                        
                         cultureCode);
 
             MessageScreen messageSuccess

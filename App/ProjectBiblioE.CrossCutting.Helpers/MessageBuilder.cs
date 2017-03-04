@@ -1,4 +1,6 @@
-﻿using System.Resources;
+﻿using System;
+using System.Collections.Generic;
+using System.Resources;
 
 using ProjectBiblioE.CrossCutting.Resource;
 using ProjectBiblioE.Domain.Contracts.Utils;
@@ -39,6 +41,36 @@ namespace ProjectBiblioE.CrossCutting.Helpers
             string messagetemp = this._resources.GetString(message.ToString());
 
             messageComplete = string.Format(messagetemp, paramsMessage);
+
+            return messageComplete;
+        }
+
+        /// <summary>
+        /// Mount message.
+        /// </summary>
+        /// <param name="message">Pattern message.</param>
+        /// <param name="subjectMessage">Subject message.</param>
+        /// <param name="paramsMessage">Params to message.</param>
+        /// <returns>Mounted message.</returns>
+        public string MountMessage(
+            MessageBiblioE message,
+            LabelText subjectMessage,
+            params string[] paramsMessage)
+        {
+            string messageComplete = string.Empty;
+
+            string messagetemp = this._resources.GetString(message.ToString());
+
+            List<string> listParams = new List<string>();
+
+            listParams.Add(_resources.GetString(subjectMessage.ToString()));
+
+            foreach (var param in paramsMessage)
+            {
+                listParams.Add(param);
+            }
+
+            messageComplete = string.Format(messagetemp, listParams.ToArray());
 
             return messageComplete;
         }

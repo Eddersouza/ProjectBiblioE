@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
+using System.Resources;
 using System.Windows.Forms;
 
 using MetroFramework.Forms;
 
+using ProjectBiblioE.CrossCutting.Helpers;
 using ProjectBiblioE.CrossCutting.IoC;
-using ProjectBiblioE.CrossCutting.Resource;
 using ProjectBiblioE.Domain.Contracts.Filters;
+using ProjectBiblioE.Domain.Contracts.Utils;
 using ProjectBiblioE.Presentation.WinForms.Contracts;
 using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.Utils.Extensions;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
-using ProjectBiblioE.Domain.Contracts.Utils;
-using ProjectBiblioE.CrossCutting.Helpers;
+using ProjectBiblioE.Domain.Enums;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 {
@@ -34,18 +35,19 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// Instance of language controller
         /// </summary>
         private readonly LanguageController _languageController;
-
         private readonly MessageContract _messageContract;
+        private readonly ResourceManager _resources;
 
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public LanguagesScreen()
+        public LanguagesScreen(ResourceManager resources)
         {
             InitializeComponent();
             CompositionRoot.Wire(new IoCModule());
             _languageController = CompositionRoot.Resolve<LanguageController>();
             _messageContract = new MessageBuilder();
+            _resources = resources;
         }
 
         /// <summary>
@@ -78,7 +80,10 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         private void BtnLanguageNew_Click(object sender, System.EventArgs e)
         {
             LanguageAddEditScreen languageNewScreen
-                = new LanguageAddEditScreen(_languageController, _messageContract);
+                = new LanguageAddEditScreen(
+                    _languageController,
+                    _messageContract,
+                    _resources);
 
             languageNewScreen.PrincipalScreen = this;
 
@@ -100,9 +105,12 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                 this.gridLanguages.DataSource = new List<LanguageViewModel>();
             }
 
+            string labelLanguage = 
+                _resources.GetString(LabelText.Language.ToString());
+
             gridLanguages.CreateColumnsByView(typeof(LanguageViewModel));
-            gridLanguages.AddEditColumn(Resources.Language_Module, ColumnNameEdit);
-            gridLanguages.AddRemoveColumn(Resources.Language_Module, ColumnNameRemove);
+            gridLanguages.AddEditColumn(labelLanguage, ColumnNameEdit);
+            gridLanguages.AddRemoveColumn(labelLanguage, ColumnNameRemove);
         }
 
         /// <summary>
