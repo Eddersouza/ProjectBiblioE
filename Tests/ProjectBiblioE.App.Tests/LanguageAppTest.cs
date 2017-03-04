@@ -20,6 +20,9 @@ namespace ProjectBiblioE.App.Tests
         private string languageCulture = "pt-BR";
         private string languageNome = "Português";
 
+        private string languageCultureNew = "it-IT";
+        private string languageNomeNew = "Italiano - Itália";
+
         private IList<Language> mockLanguage = new List<Language>();
 
         public LanguageAppTest()
@@ -29,6 +32,34 @@ namespace ProjectBiblioE.App.Tests
             Mock<LanguageServiceContract> mockApp = mock.createMock(mockLanguage);
 
             this._languageContract = new LanguageApp(mockApp.Object);
+        }
+
+        [TestMethod]
+        public void CanSave()
+        {
+            // Arrange
+            var objLanguage = new Language { CultureCode = languageCultureNew, Name = languageNomeNew };
+
+            int countTotal = this._languageContract.GetLanguages(new LanguageFilter()).Count;
+
+            // Act
+            bool saveSucess = this._languageContract.Save(objLanguage);
+
+            // Assert
+            int totalAfterSave = this._languageContract.GetLanguages(new LanguageFilter()).Count;
+
+            Assert.AreEqual(true, saveSucess);
+
+            var language =
+                this._languageContract.GetLanguages(
+                new LanguageFilter
+                {
+                    CultureCode = languageCultureNew,
+                    Name = languageNomeNew
+                }).FirstOrDefault();
+
+            Assert.AreEqual(languageCultureNew, language.CultureCode);
+            Assert.AreEqual(languageNomeNew, language.Name);
         }
 
         [TestMethod]
@@ -84,7 +115,7 @@ namespace ProjectBiblioE.App.Tests
         }
 
         [TestInitialize]
-        public void initalize()
+        public void Initalize()
         {
             mockLanguage.Add(new Language { CultureCode = "pt-BR", Name = "Português" });
             mockLanguage.Add(new Language { CultureCode = "en-US", Name = "Inglês - Estados unidos" });

@@ -1,27 +1,28 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Moq;
-
+﻿using Moq;
 using ProjectBiblioE.Domain.Contracts.Filters;
-using ProjectBiblioE.Domain.Contracts.Services;
+using ProjectBiblioE.Domain.Contracts.Repository;
 using ProjectBiblioE.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ProjectBiblioE.App.Tests
+namespace ProjectBlibioE.Tests.Mocks
 {
-    public class LanguageAppMock
+    public class LanguageRepositoryMock
     {
-        public Mock<LanguageServiceContract> createMock(IList<Language> mockLanguage)
+        public Mock<LanguageRepositoryContract> createMock(IList<Language> mockLanguage)
         {
-            Mock<LanguageServiceContract> mockApp = new Mock<LanguageServiceContract>();
+            Mock<LanguageRepositoryContract> mockRepository = new Mock<LanguageRepositoryContract>();
 
-            MockCreateSetupGetLanguage(ref mockApp, mockLanguage);
-            MockCreateSetupsetup(ref mockApp, mockLanguage);
+            MockCreateSetupGetLanguage(ref mockRepository, mockLanguage);
+            MockCreateSetupsetup(ref mockRepository, mockLanguage);
 
-            return mockApp;
+            return mockRepository;
         }
 
-        private void MockCreateSetupGetLanguage(ref Mock<LanguageServiceContract> mockApp, IList<Language> mockLanguage)
+        private void MockCreateSetupGetLanguage(ref Mock<LanguageRepositoryContract> mockApp, IList<Language> mockLanguage)
         {
             mockApp.Setup(
                lg => lg
@@ -48,7 +49,7 @@ namespace ProjectBiblioE.App.Tests
                });
         }
 
-        private void MockCreateSetupsetup(ref Mock<LanguageServiceContract> mockApp, IList<Language> mockLanguage)
+        private void MockCreateSetupsetup(ref Mock<LanguageRepositoryContract> mockApp, IList<Language> mockLanguage)
         {
             mockApp.Setup(ls =>
                 ls.Save(It.IsAny<Language>()))

@@ -1,7 +1,7 @@
 ﻿using Ninject;
 using Ninject.Modules;
 
-namespace ProjectBiblioE.CrossCutting.IoC
+namespace ProjectBlibioE.Tests.IoC
 {
     /// <summary>
     /// Composition class to injection
