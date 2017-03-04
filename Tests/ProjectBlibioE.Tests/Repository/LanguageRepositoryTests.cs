@@ -1,13 +1,12 @@
-﻿using ProjectBiblioE.Domain.Contracts.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ProjectBiblioE.Domain.Contracts.Filters;
-using ProjectBiblioE.Domain.Entities;
-using ProjectBlibioE.Tests.Mocks;
+﻿using System.Collections.Generic;
+
 using Moq;
+
+using ProjectBiblioE.Domain.Contracts.Filters;
+using ProjectBiblioE.Domain.Contracts.Repository;
+using ProjectBiblioE.Domain.Entities;
+
+using ProjectBlibioE.Tests.Mocks;
 
 namespace ProjectBlibioE.Tests.Repository
 {
@@ -34,27 +33,6 @@ namespace ProjectBlibioE.Tests.Repository
         public bool Save(Language language)
         {
             return this._languageContract.Save(language);
-        }
-
-        /// <summary>
-        /// Apply filter. 
-        /// </summary>
-        /// <param name="query">Query to filter.</param>
-        /// <param name="filter">Params to filter query.</param>
-        /// <returns>Filtered query.</returns>
-        public IQueryable<Language> ApplyFilter(IQueryable<Language> query, LanguageFilter filter)
-        {
-            if (!string.IsNullOrEmpty(filter.CultureCode))
-            {
-                query = query.Where(x => x.CultureCode.Contains(filter.CultureCode));
-            }
-
-            if (!string.IsNullOrEmpty(filter.Name))
-            {
-                query = query.Where(x => x.Name.Contains(filter.Name));
-            }
-
-            return query;
         }
     }
 }

@@ -1,12 +1,11 @@
-﻿using Moq;
+﻿using System.Collections.Generic;
+using System.Linq;
+
+using Moq;
+
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Repository;
 using ProjectBiblioE.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectBlibioE.Tests.Mocks
 {

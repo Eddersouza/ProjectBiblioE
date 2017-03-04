@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ProjectBlibioE.Tests.IoC;
+﻿using System.Linq;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using ProjectBiblioE.Domain.Contracts.Filters;
+
+using ProjectBlibioE.Tests.IoC;
 
 namespace ProjectBlibioE.Tests
 {
@@ -16,7 +15,6 @@ namespace ProjectBlibioE.Tests
 
         public LanguageTests()
         {
-            
             CompositionRoot.Wire(new IoCModule());
             _languageController = CompositionRoot.Resolve<LanguageController>();
         }
