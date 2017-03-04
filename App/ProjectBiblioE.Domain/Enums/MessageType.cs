@@ -12,6 +12,11 @@ namespace ProjectBiblioE.Domain.Enums
     public enum MessageType
     {
         /// <summary>
+        /// Alert Message.
+        /// </summary>
+        Alert,
+
+        /// <summary>
         /// Confirm message.
         /// </summary>
         Confirm,

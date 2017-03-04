@@ -173,6 +173,12 @@
     <value>BiblioE - Successo</value>
   </data>
   <data name="MSG_Success_Saved" xml:space="preserve">
-    <value>{0} salvo com sucesso!</value>
+    <value>{0} {1} salvo com sucesso!</value>
+  </data>
+  <data name="MSG_Alredy_Exists" xml:space="preserve">
+    <value>{0} {1} já existe!</value>
+  </data>
+  <data name="MessageScreenTitleAlert" xml:space="preserve">
+    <value>BiblioE - Alerta</value>
   </data>
 </root>

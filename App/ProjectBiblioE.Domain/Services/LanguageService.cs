@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Repository;
 using ProjectBiblioE.Domain.Contracts.Services;
 using ProjectBiblioE.Domain.Entities;
+using ProjectBiblioE.Domain.Exceptions;
+using ProjectBiblioE.Domain.Contracts.Utils;
+using ProjectBiblioE.Domain.Enums;
 
 namespace ProjectBiblioE.Domain.Services
 {
@@ -18,13 +20,22 @@ namespace ProjectBiblioE.Domain.Services
         /// </summary>
         private readonly LanguageRepositoryContract _languageRepository;
 
+
+        /// <summary>
+        /// Instance of language repository.
+        /// </summary>
+        private readonly MessageContract _messageContract;
+
         /// <summary>
         /// Constructor for service language.
         /// </summary>
         /// <param name="languageRepositoryContract">Instance of repository.</param>
-        public LanguageService(LanguageRepositoryContract languageRepositoryContract)
+        public LanguageService(
+            LanguageRepositoryContract languageRepositoryContract,
+            MessageContract messageContract)
         {
             this._languageRepository = languageRepositoryContract;
+            this._messageContract = messageContract;
         }
 
         /// <summary>
@@ -43,6 +54,26 @@ namespace ProjectBiblioE.Domain.Services
         /// <param name="language">Language to save.</param>
         public bool Save(Language language)
         {
+            var obj =
+                this._languageRepository
+                    .GetLanguages(
+                        new LanguageFilter
+                        {
+                            CultureCode = language.CultureCode
+                        });
+
+            if (obj != null && obj.Count != 0)
+            {
+                string messageAlreadExists
+                    = this._messageContract
+                    .MountMessage(
+                        MessageBiblioE.MSG_Alredy_Exists,
+                        "Idioma",
+                        language.CultureCode);
+
+                throw new BiblioEException(messageAlreadExists);
+            }
+
             return this._languageRepository.Save(language);
         }
     }

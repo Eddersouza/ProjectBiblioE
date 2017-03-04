@@ -205,6 +205,15 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BiblioE - Alerta.
+        /// </summary>
+        public static string MessageScreenTitleAlert {
+            get {
+                return ResourceManager.GetString("MessageScreenTitleAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BiblioE - Confirmação.
         /// </summary>
         public static string MessageScreenTitleConfirm {
@@ -232,7 +241,16 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} salvo com sucesso!.
+        ///   Looks up a localized string similar to Idioma {0} já existe!.
+        /// </summary>
+        public static string MSG_Alredy_Exists {
+            get {
+                return ResourceManager.GetString("MSG_Alredy_Exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Idioma {0} salvo com sucesso!.
         /// </summary>
         public static string MSG_Success_Saved {
             get {

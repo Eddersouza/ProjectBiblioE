@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBlibioE.Tests", "Tests\ProjectBlibioE.Tests\ProjectBlibioE.Tests.csproj", "{72FEBBFC-CD3B-47D2-AFFB-F9E5880C495A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBiblioE.CrossCutting.Helpers", "App\ProjectBiblioE.CrossCutting.Helpers\ProjectBiblioE.CrossCutting.Helpers.csproj", "{F784B34F-A9D1-448C-8D63-8F7956CF6FF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{72FEBBFC-CD3B-47D2-AFFB-F9E5880C495A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72FEBBFC-CD3B-47D2-AFFB-F9E5880C495A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72FEBBFC-CD3B-47D2-AFFB-F9E5880C495A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F784B34F-A9D1-448C-8D63-8F7956CF6FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F784B34F-A9D1-448C-8D63-8F7956CF6FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F784B34F-A9D1-448C-8D63-8F7956CF6FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F784B34F-A9D1-448C-8D63-8F7956CF6FF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +90,6 @@ Global
 		{742CA12E-D18C-40C8-96B7-2AAB5DDC5587} = {B408367D-B215-4E9F-93B9-55F07704C716}
 		{4DC212C9-9203-4362-849C-CE4A4547E5B3} = {77AEF40B-F0B1-481C-8DAD-A4FA6FDA17FA}
 		{72FEBBFC-CD3B-47D2-AFFB-F9E5880C495A} = {EFB9FDFA-8B07-47E4-BF2F-7C215E783DD4}
+		{F784B34F-A9D1-448C-8D63-8F7956CF6FF0} = {77AEF40B-F0B1-481C-8DAD-A4FA6FDA17FA}
 	EndGlobalSection
 EndGlobal

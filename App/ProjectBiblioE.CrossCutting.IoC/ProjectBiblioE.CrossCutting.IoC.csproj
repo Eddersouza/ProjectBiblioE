@@ -55,6 +55,10 @@
       <Project>{92C357E1-9231-4A80-B999-B065809731CD}</Project>
       <Name>ProjectBiblioE.App</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectBiblioE.CrossCutting.Helpers\ProjectBiblioE.CrossCutting.Helpers.csproj">
+      <Project>{f784b34f-a9d1-448c-8d63-8f7956cf6ff0}</Project>
+      <Name>ProjectBiblioE.CrossCutting.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectBiblioE.Domain\ProjectBiblioE.Domain.csproj">
       <Project>{acc55497-aad5-4a63-8771-46984d65d54a}</Project>
       <Name>ProjectBiblioE.Domain</Name>

@@ -2,7 +2,9 @@
 
 using MetroFramework.Forms;
 
+using ProjectBiblioE.Domain.Contracts.Utils;
 using ProjectBiblioE.Domain.Enums;
+using ProjectBiblioE.Domain.Exceptions;
 using ProjectBiblioE.Presentation.WinForms.Contracts;
 using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
@@ -16,14 +18,19 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
     public partial class LanguageAddEditScreen : MetroForm, ScreenContract
     {
         private readonly LanguageController _languageController;
+        private readonly MessageContract _messageContract;
 
         /// <summary>
         /// Default Constructor.
         /// </summary>
-        public LanguageAddEditScreen(LanguageController controller)
+        public LanguageAddEditScreen(
+            LanguageController controller,
+            MessageContract message)
         {
             InitializeComponent();
+
             _languageController = controller;
+            _messageContract = message;
 
             this.Text = "Novo Idioma";
         }
@@ -80,20 +87,91 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// <param name="e">Event arguments;</param>
         private void btnLanguageSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                LanguageViewModel view = getDataFromScreen();
+
+                this._languageController.Save(view);
+
+                this.PrincipalScreen.ScreenLoad();
+
+                PrincipalScreen.ScreenLoad();
+
+                ShowSuccessMessage(view.CultureCode);
+
+                this.ScreenClose();
+            }
+            catch (BiblioEException ex)
+            {
+                ShowAlertMessage(ex.Message);
+
+                this.ScreenClose();
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage(ex.Message);
+
+                this.ScreenClose();
+            }
+        }
+
+        /// <summary>
+        /// Get values from screen.
+        /// </summary>
+        /// <returns></returns>
+        private LanguageViewModel getDataFromScreen()
+        {
             LanguageViewModel view = new LanguageViewModel();
             view.CultureCode = txtLanguageCode.Text;
             view.Name = txtLanguageName.Text;
 
-            this._languageController.Save(view);
+            return view;
+        }
 
-            this.PrincipalScreen.ScreenLoad();
+        /// <summary>
+        /// Show alert message.
+        /// </summary>
+        /// <param name="message">Message to alert./param>
+        private void ShowAlertMessage(string message)
+        {
+            MessageScreen messageAlert
+                    = new MessageScreen(
+                        MessageType.Alert,
+                        message);
 
-            PrincipalScreen.ScreenLoad();
+            messageAlert.ShowDialog();
+        }
 
-            MessageScreen mess = new MessageScreen(MessageType.Success, "Idioma Salvo com Sucesso!");
-            mess.ShowDialog();
+        /// <summary>
+        /// Show message error.
+        /// </summary>
+        /// <param name="message">Message to error.</param>
+        private void ShowErrorMessage(string message)
+        {
+            MessageScreen messageError
+                    = new MessageScreen(
+                        MessageType.Error,
+                        message);
 
-            this.ScreenClose();
+            messageError.ShowDialog();
+        }
+
+        /// <summary>
+        /// Show message sucess.
+        /// </summary>
+        /// <param name="cultureCode">Culture code to message.</param>
+        private void ShowSuccessMessage(string cultureCode)
+        {
+            string messageSuccessSaved
+                    = this._messageContract
+                        .MountMessage(
+                        MessageBiblioE.MSG_Success_Saved,
+                        "Idioma",
+                        cultureCode);
+
+            MessageScreen messageSuccess
+                = new MessageScreen(MessageType.Success, messageSuccessSaved);
+            messageSuccess.ShowDialog();
         }
     }
 }

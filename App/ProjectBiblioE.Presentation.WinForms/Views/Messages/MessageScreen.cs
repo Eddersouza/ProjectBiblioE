@@ -15,6 +15,11 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Messages
 
             switch (messageType)
             {
+                case MessageType.Alert:
+                    this.Text = Resources.MessageScreenTitleSucess;
+                    this.imgMessage.Image = Resources.icon_message_alert_yellow_128_28;
+                    this.lblMessageText.Text = messageText;
+                    break;
                 case MessageType.Confirm:
                     this.Text = Resources.MessageScreenTitleConfirm;
                     this.imgMessage.Image = Resources.icon_message_confirm_blue_128_128;
@@ -31,6 +36,9 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Messages
                     this.lblMessageText.Text = messageText;
                     break;
                 default:
+                    this.Text = Resources.MessageScreenTitleError;
+                    this.imgMessage.Image = Resources.icon_message_close_rede_128_128;
+                    this.lblMessageText.Text = messageText;
                     break;
             }
         }

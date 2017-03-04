@@ -146,6 +146,10 @@
       <Project>{92c357e1-9231-4a80-b999-b065809731cd}</Project>
       <Name>ProjectBiblioE.App</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectBiblioE.CrossCutting.Helpers\ProjectBiblioE.CrossCutting.Helpers.csproj">
+      <Project>{F784B34F-A9D1-448C-8D63-8F7956CF6FF0}</Project>
+      <Name>ProjectBiblioE.CrossCutting.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectBiblioE.CrossCutting.IoC\ProjectBiblioE.CrossCutting.IoC.csproj">
       <Project>{4dc212c9-9203-4362-849c-ce4a4547e5b3}</Project>
       <Name>ProjectBiblioE.CrossCutting.IoC</Name>

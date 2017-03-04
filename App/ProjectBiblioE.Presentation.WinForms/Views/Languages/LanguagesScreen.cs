@@ -10,6 +10,8 @@ using ProjectBiblioE.Presentation.WinForms.Contracts;
 using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.Utils.Extensions;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
+using ProjectBiblioE.Domain.Contracts.Utils;
+using ProjectBiblioE.CrossCutting.Helpers;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 {
@@ -33,6 +35,8 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// </summary>
         private readonly LanguageController _languageController;
 
+        private readonly MessageContract _messageContract;
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -41,6 +45,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             InitializeComponent();
             CompositionRoot.Wire(new IoCModule());
             _languageController = CompositionRoot.Resolve<LanguageController>();
+            _messageContract = new MessageBuilder();
         }
 
         /// <summary>
@@ -73,7 +78,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         private void BtnLanguageNew_Click(object sender, System.EventArgs e)
         {
             LanguageAddEditScreen languageNewScreen
-                = new LanguageAddEditScreen(_languageController);
+                = new LanguageAddEditScreen(_languageController, _messageContract);
 
             languageNewScreen.PrincipalScreen = this;
 

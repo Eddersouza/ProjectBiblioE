@@ -22,9 +22,9 @@ namespace ProjectBlibioE.Tests
             return languages;
         }
 
-        public void Save(Language language)
+        public bool Save(Language language)
         {
-            this._languageApp.Save(language);
+            return this._languageApp.Save(language);
         }
     }
 }
