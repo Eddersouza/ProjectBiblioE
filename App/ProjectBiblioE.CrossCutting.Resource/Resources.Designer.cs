@@ -171,9 +171,36 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         /// <summary>
         ///   Looks up a localized string similar to Idioma.
         /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Idioma.
+        /// </summary>
         public static string Language_Module {
             get {
                 return ResourceManager.GetString("Language_Module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Novo Idioma.
+        /// </summary>
+        public static string LanguageNew {
+            get {
+                return ResourceManager.GetString("LanguageNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Idiomas.
+        /// </summary>
+        public static string Languages {
+            get {
+                return ResourceManager.GetString("Languages", resourceCulture);
             }
         }
         
@@ -241,7 +268,7 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Idioma {0} já existe!.
+        ///   Looks up a localized string similar to {0} {1} já existe!.
         /// </summary>
         public static string MSG_Alredy_Exists {
             get {
@@ -250,7 +277,7 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Idioma {0} salvo com sucesso!.
+        ///   Looks up a localized string similar to {0} {1} salvo com sucesso!.
         /// </summary>
         public static string MSG_Success_Saved {
             get {

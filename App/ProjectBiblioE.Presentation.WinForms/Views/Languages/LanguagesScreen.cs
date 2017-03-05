@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Resources;
 using System.Windows.Forms;
 
@@ -8,11 +9,12 @@ using ProjectBiblioE.CrossCutting.Helpers;
 using ProjectBiblioE.CrossCutting.IoC;
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Utils;
+using ProjectBiblioE.Domain.Enums;
 using ProjectBiblioE.Presentation.WinForms.Contracts;
 using ProjectBiblioE.Presentation.WinForms.Controllers;
 using ProjectBiblioE.Presentation.WinForms.Utils.Extensions;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
-using ProjectBiblioE.Domain.Enums;
+using ProjectBiblioE.Presentation.WinForms.Views.Messages;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 {
@@ -63,11 +65,22 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// </summary>
         public void ScreenLoad()
         {
-            LanguageFilter filter = new LanguageFilter();
-            List<LanguageViewModel> list
-                = _languageController.GetLanguages(filter);
+            try
+            {
+                LanguageFilter filter = new LanguageFilter();
+                List<LanguageViewModel> list
+                    = _languageController.GetLanguages(filter);
 
-            this.PopulateGridLanguage(list);
+                this.PopulateGridLanguage(list);
+            }
+            catch (Exception ex)
+            {
+                string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
+
+                ShowErrorMessage(message);
+
+                this.ScreenClose();
+            }
 
             this.Cursor = Cursors.Default;
         }
@@ -105,12 +118,26 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                 this.gridLanguages.DataSource = new List<LanguageViewModel>();
             }
 
-            string labelLanguage = 
+            string labelLanguage =
                 _resources.GetString(LabelText.Language.ToString());
 
             gridLanguages.CreateColumnsByView(typeof(LanguageViewModel));
             gridLanguages.AddEditColumn(labelLanguage, ColumnNameEdit);
             gridLanguages.AddRemoveColumn(labelLanguage, ColumnNameRemove);
+        }
+
+        /// <summary>
+        /// Show message error.
+        /// </summary>
+        /// <param name="message">Message to error.</param>
+        private void ShowErrorMessage(string message)
+        {
+            MessageScreen messageError
+                    = new MessageScreen(
+                        MessageType.Error,
+                        message);
+
+            messageError.ShowDialog();
         }
 
         /// <summary>
@@ -120,21 +147,32 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// <param name="e">Arguments of event.</param>
         private void txtLanguageNameSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            LanguageFilter filter = new LanguageFilter();
-
-            string languageCode = txtLanguageSearch.Text;
-            string languageName = txtLanguageNameSearch.Text;
-
-            if (txtLanguageNameSearch.Text.Length > 2)
+            try
             {
-                filter.CultureCode = languageCode;
-                filter.Name = languageName;
+                LanguageFilter filter = new LanguageFilter();
+
+                string languageCode = txtLanguageSearch.Text;
+                string languageName = txtLanguageNameSearch.Text;
+
+                if (txtLanguageNameSearch.Text.Length > 2)
+                {
+                    filter.CultureCode = languageCode;
+                    filter.Name = languageName;
+                }
+
+                List<LanguageViewModel> list
+                     = _languageController.GetLanguages(filter);
+
+                this.PopulateGridLanguage(list);
             }
+            catch (Exception ex)
+            {
+                string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
-            List<LanguageViewModel> list
-                 = _languageController.GetLanguages(filter);
+                ShowErrorMessage(message);
 
-            this.PopulateGridLanguage(list);
+                this.ScreenClose();
+            }
         }
 
         /// <summary>
@@ -144,21 +182,32 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// <param name="e">Arguments of event.</param>
         private void txtLanguageSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            LanguageFilter filter = new LanguageFilter();
-
-            string languageCode = txtLanguageSearch.Text;
-            string languageName = txtLanguageNameSearch.Text;
-
-            if (languageCode.Length > 2)
+            try
             {
-                filter.CultureCode = languageCode;
-                filter.Name = languageName;
+                LanguageFilter filter = new LanguageFilter();
+
+                string languageCode = txtLanguageSearch.Text;
+                string languageName = txtLanguageNameSearch.Text;
+
+                if (languageCode.Length > 2)
+                {
+                    filter.CultureCode = languageCode;
+                    filter.Name = languageName;
+                }
+
+                List<LanguageViewModel> list
+                    = _languageController.GetLanguages(filter);
+
+                this.PopulateGridLanguage(list);
             }
+            catch (Exception ex)
+            {
+                string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
-            List<LanguageViewModel> list
-                = _languageController.GetLanguages(filter);
+                ShowErrorMessage(message);
 
-            this.PopulateGridLanguage(list);
+                this.ScreenClose();
+            }
         }
     }
 }

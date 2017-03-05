@@ -190,4 +190,7 @@
   <data name="Languages" xml:space="preserve">
     <value>Idiomas</value>
   </data>
+  <data name="MSG_GenericError" xml:space="preserve">
+    <value>Ocorreu um erro, tente novamente ou entre em contato com o suporte.</value>
+  </data>
 </root>
