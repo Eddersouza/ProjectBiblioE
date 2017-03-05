@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -40,6 +41,16 @@ namespace ProjectBiblioE.Infra.Data.Repositories
             }
 
             return query;
+        }
+
+        /// <summary>
+        /// Delete language.
+        /// </summary>
+        /// <param name="code">Code of language.</param>
+        /// <returns>True if exclude/ False if not.</returns>
+        public bool Delete(string code)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

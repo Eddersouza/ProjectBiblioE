@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using ProjectBiblioE.Domain.Contracts.App;
@@ -25,6 +26,16 @@ namespace ProjectBiblioE.App
         public LanguageApp(LanguageServiceContract languageContract)
         {
             this._languageContract = languageContract;
+        }
+
+        /// <summary>
+        /// Delete language.
+        /// </summary>
+        /// <param name="code">Code of language.</param>
+        /// <returns>True if exclude/ False if not.</returns>
+        public bool Delete(string code)
+        {
+            return this._languageContract.Delete(code);
         }
 
         /// <summary>

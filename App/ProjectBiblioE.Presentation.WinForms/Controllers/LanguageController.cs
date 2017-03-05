@@ -26,6 +26,15 @@ namespace ProjectBiblioE.Presentation.WinForms.Controllers
         }
 
         /// <summary>
+        /// Delete language.
+        /// </summary>
+        /// <param name="code">Code of language.</param>
+        public void Delete(string code)
+        {
+            this._languageApp.Delete(code);
+        }
+
+        /// <summary>
         /// Get the languages.
         /// </summary>
         /// <param name="filters">Filters to get languages.</param>

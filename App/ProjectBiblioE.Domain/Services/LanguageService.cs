@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
@@ -36,6 +37,16 @@ namespace ProjectBiblioE.Domain.Services
         {
             this._languageRepository = languageRepositoryContract;
             this._messageContract = messageContract;
+        }
+
+        /// <summary>
+        /// Delete language.
+        /// </summary>
+        /// <param name="code">Code of language.</param>
+        /// <returns>True if exclude/ False if not.</returns>
+        public bool Delete(string code)
+        {
+            return this._languageRepository.Delete(code);
         }
 
         /// <summary>
