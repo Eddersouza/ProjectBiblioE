@@ -53,9 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="IoC\CompositionRoot.cs" />
     <Compile Include="IoC\IoCModule.cs" />
-    <Compile Include="LanguageController.cs" />
     <Compile Include="LanguageTests.cs" />
     <Compile Include="Mocks\LanguageRepositoryMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

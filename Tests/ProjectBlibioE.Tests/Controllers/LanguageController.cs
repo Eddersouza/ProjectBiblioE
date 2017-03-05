@@ -4,7 +4,7 @@ using ProjectBiblioE.Domain.Contracts.App;
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Entities;
 
-namespace ProjectBlibioE.Tests
+namespace ProjectBlibioE.Tests.Controllers
 {
     public class LanguageController
     {
@@ -13,6 +13,11 @@ namespace ProjectBlibioE.Tests
         public LanguageController(LanguageAppContract languageApp)
         {
             _languageApp = languageApp;
+        }
+
+        public bool Delete(string code)
+        {
+            return this._languageApp.Delete(code);
         }
 
         public List<Language> GetLanguages(LanguageFilter filters)

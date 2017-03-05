@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Moq;
@@ -18,8 +19,28 @@ namespace ProjectBlibioE.Tests.Mocks
             MockCreateSetupGetLanguage(ref mockRepository, mockLanguage);
             MockCreateSetupSave(ref mockRepository, mockLanguage);
             MockCreateSetupSaveEdited(ref mockRepository, mockLanguage);
+            MockCreateSetupDelete(ref mockRepository, mockLanguage);
 
             return mockRepository;
+        }
+
+        private void MockCreateSetupDelete(ref Mock<LanguageRepositoryContract> mockApp, IList<Language> mockLanguage)
+        {
+            mockApp.Setup(ls =>
+               ls.Delete(It.IsAny<string>()))
+               .Returns((string obj) =>
+               {
+                   var language = mockLanguage.Where(l => l.CultureCode.Equals(obj));
+
+                   if (language != null && language.Count() == 1)
+                   {
+                       mockLanguage.Remove(language.FirstOrDefault());
+                       return true;
+
+                   }
+
+                   return false;
+               });
         }
 
         private void MockCreateSetupGetLanguage(

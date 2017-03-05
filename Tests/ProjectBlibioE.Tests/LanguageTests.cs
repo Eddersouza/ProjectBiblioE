@@ -9,6 +9,7 @@ using ProjectBiblioE.Domain.Entities;
 using ProjectBiblioE.Domain.Enums;
 using ProjectBiblioE.Domain.Exceptions;
 
+using ProjectBlibioE.Tests.Controllers;
 using ProjectBlibioE.Tests.IoC;
 
 namespace ProjectBlibioE.Tests
@@ -72,6 +73,41 @@ namespace ProjectBlibioE.Tests
             // Assert
             Assert.IsNotNull(obj);
             Assert.AreEqual(name, obj.Name);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(BiblioEException))]
+        public void SaveEditedLanguageWithEmptyName()
+        {
+            // Arrange
+            Language language = new Language();
+            language.CultureCode = cultureNew;
+            language.Name = string.Empty;
+
+            try
+            {
+                // Act
+                var languageSaved =
+                this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
+                languageSaved.Name = language.Name;
+
+                bool hasSaved = this._languageController.SaveEdited(languageSaved);
+
+                var languageEdited =
+                    this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
+
+            }
+            catch (BiblioEException ex)
+            {
+                string messageFieldRequired
+                         = this._messageContract
+                         .MountMessage(
+                             MessageBiblioE.MSG_Field_Required,
+                             LabelText.Name);
+
+                Assert.AreEqual(messageFieldRequired, ex.Message);
+                throw;
+            }
         }
 
         [TestMethod]
@@ -194,38 +230,22 @@ namespace ProjectBlibioE.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(BiblioEException))]
-        public void SaveEditedLanguageWithEmptyName()
+        public void Delete()
         {
             // Arrange
-            Language language = new Language();
-            language.CultureCode = cultureNew;
-            language.Name = string.Empty;
-
-            try
-            {
-                // Act
-                var languageSaved =
+            
+            // Act
+            var languageSaved =
                 this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
-                languageSaved.Name = language.Name;
 
-                bool hasSaved = this._languageController.SaveEdited(languageSaved);
+            bool hasDeleted = this._languageController.Delete(culture);
 
-                var languageEdited =
-                    this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
-
-            }
-            catch (BiblioEException ex)
-            {
-                string messageFieldRequired
-                         = this._messageContract
-                         .MountMessage(
-                             MessageBiblioE.MSG_Field_Required,
-                             LabelText.Name);
-
-                Assert.AreEqual(messageFieldRequired, ex.Message);
-                throw;
-            }
+            var languageEdited =
+                this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
+            
+            // Assert
+            Assert.IsTrue(hasDeleted);
+            Assert.AreEqual(null, languageEdited);
         }
     }
 }

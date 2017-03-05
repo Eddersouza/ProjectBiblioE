@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Moq;
 
@@ -42,6 +43,11 @@ namespace ProjectBlibioE.Tests.Repository
         public bool SaveEdited(Language language)
         {
             return this._languageContract.SaveEdited(language);
+        }
+
+        public bool Delete(string code)
+        {
+            return this._languageContract.Delete(code);
         }
     }
 }
