@@ -67,5 +67,15 @@ namespace ProjectBiblioE.Infra.Data.Repositories
 
             return true;
         }
+
+        /// <summary>
+        /// Save edited language.
+        /// </summary>
+        /// <param name="language">language to save.</param>
+        /// <returns>True if success saved / False if not.</returns>
+        public bool SaveEdited(Language language)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

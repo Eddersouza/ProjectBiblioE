@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Repository;
 using ProjectBiblioE.Domain.Contracts.Services;
-using ProjectBiblioE.Domain.Entities;
-using ProjectBiblioE.Domain.Exceptions;
 using ProjectBiblioE.Domain.Contracts.Utils;
+using ProjectBiblioE.Domain.Entities;
 using ProjectBiblioE.Domain.Enums;
+using ProjectBiblioE.Domain.Exceptions;
 
 namespace ProjectBiblioE.Domain.Services
 {
@@ -71,8 +72,41 @@ namespace ProjectBiblioE.Domain.Services
             if (string.IsNullOrEmpty(language.Name))
                 this.ThrowMessage(MessageBiblioE.MSG_Field_Required, LabelText.Name);
 
-
             return this._languageRepository.Save(language);
+        }
+
+        /// <summary>
+        /// Save edited language.
+        /// </summary>
+        /// <param name="language">language to save.</param>
+        /// <returns>True if success saved / False if not.</returns>
+        public bool SaveEdited(Language language)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Verifi if language already exists.
+        /// </summary>
+        /// <param name="languages">Languages to compare.</param>
+        /// <param name="language">Language to test.</param>
+        /// <returns>True if exists/ False if not.</returns>
+        private bool ExistLanguage(List<Language> languages, Language language)
+        {
+            bool exists = false;
+
+            if (languages != null && languages.Count != 0)
+            {
+                var obj = languages.FirstOrDefault();
+
+                if (obj.CultureCode.Equals(language.CultureCode)
+                    || obj.Name.Equals(language.Name))
+                {
+                    exists = true;
+                }
+            }
+
+            return exists;
         }
 
         /// <summary>
@@ -99,30 +133,6 @@ namespace ProjectBiblioE.Domain.Services
                 = _messageContract.MountMessage(messagePatern, subject, paramsMessage);
 
             throw new BiblioEException(messageFieldRequired);
-        }
-
-        /// <summary>
-        /// Verifi if language already exists.
-        /// </summary>
-        /// <param name="languages">Languages to compare.</param>
-        /// <param name="language">Language to test.</param>
-        /// <returns>True if exists/ False if not.</returns>
-        private bool ExistLanguage(List<Language> languages, Language language)
-        {
-            bool exists = false;
-
-            if (languages != null && languages.Count != 0)
-            {
-                var obj = languages.FirstOrDefault();
-
-                if (obj.CultureCode.Equals(language.CultureCode)
-                    || obj.Name.Equals(language.Name))
-                {
-                    exists = true;
-                }
-            }
-
-            return exists;
         }
     }
 }

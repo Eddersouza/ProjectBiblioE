@@ -44,6 +44,16 @@ namespace ProjectBiblioE.App
         public bool Save(Language language)
         {
             return this._languageContract.Save(language);
-        }        
+        }
+
+        /// <summary>
+        /// Save edited language.
+        /// </summary>
+        /// <param name="language">language to save.</param>
+        /// <returns>True if success saved / False if not.</returns>
+        public bool SaveEdited(Language language)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

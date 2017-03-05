@@ -22,5 +22,11 @@ namespace ProjectBiblioE.Domain.Contracts.Services
         /// </summary>
         /// <param name="language">Language to save.</param>
         bool Save(Language language);
+
+        /// <summary>
+        /// Save Edited Language.
+        /// </summary>
+        /// <param name="language">Language to save.</param>
+        bool SaveEdited(Language language);
     }
 }
