@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Repository;
@@ -75,7 +73,10 @@ namespace ProjectBiblioE.Infra.Data.Repositories
         /// <returns>True if success saved / False if not.</returns>
         public bool SaveEdited(Language language)
         {
-            throw new NotImplementedException();
+            _context.Entry(language).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return true;
         }
     }
 }

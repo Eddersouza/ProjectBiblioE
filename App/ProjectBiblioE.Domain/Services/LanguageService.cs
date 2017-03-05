@@ -81,6 +81,9 @@ namespace ProjectBiblioE.Domain.Services
         /// <returns>True if success saved / False if not.</returns>
         public bool SaveEdited(Language language)
         {
+            if (string.IsNullOrEmpty(language.Name))
+                this.ThrowMessage(MessageBiblioE.MSG_Field_Required, LabelText.Name);
+
             return this._languageRepository.SaveEdited(language);
         }
 

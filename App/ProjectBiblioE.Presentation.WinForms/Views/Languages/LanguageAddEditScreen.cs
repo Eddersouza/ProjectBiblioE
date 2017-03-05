@@ -108,7 +108,14 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
             {
                 LanguageViewModel view = getDataFromScreen();
 
-                this._languageController.Save(view);
+                if (this._languageView == null)
+                {
+                    this._languageController.Save(view);
+                }
+                else
+                {
+                    this._languageController.SaveEdited(view);
+                }
 
                 this.PrincipalScreen.ScreenLoad();
 
@@ -124,9 +131,12 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 
                 this.ScreenClose();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ShowErrorMessage(ex.Message);
+                // TODO: create log
+                string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
+
+                ShowErrorMessage(message);
 
                 this.ScreenClose();
             }

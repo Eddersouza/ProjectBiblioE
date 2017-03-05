@@ -48,12 +48,21 @@ namespace ProjectBiblioE.Presentation.WinForms.Controllers
         }
 
         /// <summary>
-        /// Save language
+        /// Save language.
         /// </summary>
-        /// <param name="language">Language to save</param>
+        /// <param name="language">Language to save.</param>
         public void Save(LanguageViewModel language)
         {
             this._languageApp.Save(language.ToLanguageEntity());
+        }
+
+        /// <summary>
+        /// Save edited language.
+        /// </summary>
+        /// <param name="language">Language to save.</param>
+        public void SaveEdited(LanguageViewModel language)
+        {
+            this._languageApp.SaveEdited(language.ToLanguageEntity());
         }
     }
 }

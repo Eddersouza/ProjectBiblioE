@@ -192,5 +192,40 @@ namespace ProjectBlibioE.Tests
                 throw;
             }
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(BiblioEException))]
+        public void SaveEditedLanguageWithEmptyName()
+        {
+            // Arrange
+            Language language = new Language();
+            language.CultureCode = cultureNew;
+            language.Name = string.Empty;
+
+            try
+            {
+                // Act
+                var languageSaved =
+                this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
+                languageSaved.Name = language.Name;
+
+                bool hasSaved = this._languageController.SaveEdited(languageSaved);
+
+                var languageEdited =
+                    this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
+
+            }
+            catch (BiblioEException ex)
+            {
+                string messageFieldRequired
+                         = this._messageContract
+                         .MountMessage(
+                             MessageBiblioE.MSG_Field_Required,
+                             LabelText.Name);
+
+                Assert.AreEqual(messageFieldRequired, ex.Message);
+                throw;
+            }
+        }
     }
 }
