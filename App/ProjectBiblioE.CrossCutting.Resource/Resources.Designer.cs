@@ -196,6 +196,15 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alterar Idioma.
+        /// </summary>
+        public static string LanguageEdit {
+            get {
+                return ResourceManager.GetString("LanguageEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Novo Idioma.
         /// </summary>
         public static string LanguageNew {

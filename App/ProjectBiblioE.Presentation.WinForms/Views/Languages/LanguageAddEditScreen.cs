@@ -19,6 +19,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
     public partial class LanguageAddEditScreen : MetroForm, ScreenContract
     {
         private readonly LanguageController _languageController;
+        private readonly LanguageViewModel _languageView;
         private readonly MessageContract _messageContract;
         private readonly ResourceManager _resources;
 
@@ -26,17 +27,17 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// Default Constructor.
         /// </summary>
         public LanguageAddEditScreen(
+            LanguageViewModel languageView,
             LanguageController controller,
             MessageContract message,
             ResourceManager resources)
         {
             InitializeComponent();
 
+            _languageView = languageView;
             _languageController = controller;
             _messageContract = message;
             _resources = resources;
-
-            this.Text = _resources.GetString(LabelText.LanguageNew.ToString());
         }
 
         /// <summary>
@@ -60,7 +61,19 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         /// </summary>
         public void ScreenLoad()
         {
-            throw new NotImplementedException();
+            if (this._languageView == null)
+            {
+                this.Text = _resources.GetString(LabelText.LanguageNew.ToString());
+            }
+            else
+            {
+                this.Text = _resources.GetString(LabelText.LanguageEdit.ToString());
+
+                this.txtLanguageCode.Text = this._languageView.CultureCode;
+                this.txtLanguageName.Text = this._languageView.Name;
+
+                this.txtLanguageCode.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -170,7 +183,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                     = this._messageContract
                         .MountMessage(
                         MessageBiblioE.MSG_Success_Saved,
-                        _resources.GetString(LabelText.Language.ToString()),                        
+                        _resources.GetString(LabelText.Language.ToString()),
                         cultureCode);
 
             MessageScreen messageSuccess

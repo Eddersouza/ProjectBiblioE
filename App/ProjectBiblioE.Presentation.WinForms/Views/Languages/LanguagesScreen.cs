@@ -46,6 +46,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         public LanguagesScreen(ResourceManager resources)
         {
             InitializeComponent();
+
             CompositionRoot.Wire(new IoCModule());
             _languageController = CompositionRoot.Resolve<LanguageController>();
             _messageContract = new MessageBuilder();
@@ -73,8 +74,9 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 
                 this.PopulateGridLanguage(list);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
                 ShowErrorMessage(message);
@@ -94,13 +96,93 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         {
             LanguageAddEditScreen languageNewScreen
                 = new LanguageAddEditScreen(
+                    null,
                     _languageController,
                     _messageContract,
                     _resources);
 
             languageNewScreen.PrincipalScreen = this;
+            languageNewScreen.ScreenLoad();
 
             languageNewScreen.ShowDialog();
+        }
+
+        /// <summary>
+        /// Get language For Row.
+        /// </summary>
+        /// <param name="row">Row with language.</param>
+        /// <returns>View with data language.</returns>
+        private LanguageViewModel GetLanguageForRow(DataGridViewRow row)
+        {
+            string codeCulture = row.Cells["CultureCode"].Value.ToString();
+            string name = row.Cells["Name"].Value.ToString();
+
+            LanguageViewModel language = new LanguageViewModel
+            {
+                CultureCode = codeCulture,
+                Name = name
+            };
+
+            return language;
+        }
+
+        /// <summary>
+        /// Event click on Button of grid.
+        /// </summary>
+        /// <param name="sender">Grid Language.</param>
+        /// <param name="e">Event Arguments.</param>
+        private void gridLanguages_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var senderGrid = (DataGridView)sender;
+
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
+                    e.RowIndex >= 0)
+                {
+                    var row = senderGrid.Rows[e.RowIndex];
+
+                    var language = this.GetLanguageForRow(row);
+
+                    int columnIndex = senderGrid.CurrentCell.ColumnIndex;
+                    string colName = senderGrid.Columns[columnIndex].Name;
+
+                    if (colName.Equals(ColumnNameEdit)) this.OpenEditForm(language);
+
+                    if (colName.Equals(ColumnNameRemove))
+                    {
+                        //this.RemoveLanguage(language);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // TODO: create log
+                string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
+
+                ShowErrorMessage(message);
+
+                this.ScreenClose();
+            }
+        }
+
+        /// <summary>
+        /// Open edit form with selected language
+        /// </summary>
+        /// <param name="language">View Language</param>
+        private void OpenEditForm(LanguageViewModel language)
+        {
+            LanguageAddEditScreen languageEditScreen
+                = new LanguageAddEditScreen(
+                    language,
+                    _languageController,
+                    _messageContract,
+                    _resources);
+
+            languageEditScreen.PrincipalScreen = this;
+            languageEditScreen.ScreenLoad();
+
+            languageEditScreen.ShowDialog();
         }
 
         /// <summary>
@@ -165,8 +247,9 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 
                 this.PopulateGridLanguage(list);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
                 ShowErrorMessage(message);
@@ -200,8 +283,9 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 
                 this.PopulateGridLanguage(list);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
                 ShowErrorMessage(message);

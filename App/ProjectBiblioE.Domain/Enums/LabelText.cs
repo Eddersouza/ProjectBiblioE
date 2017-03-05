@@ -8,6 +8,8 @@
 
         Languages,
 
+        LanguageEdit,
+
         LanguageNew,
 
         Name

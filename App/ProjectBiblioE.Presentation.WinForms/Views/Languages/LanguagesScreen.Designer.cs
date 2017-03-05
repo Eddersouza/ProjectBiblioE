@@ -197,6 +197,7 @@
             this.gridLanguages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridLanguages.Size = new System.Drawing.Size(654, 226);
             this.gridLanguages.TabIndex = 2;
+            this.gridLanguages.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLanguages_CellContentClick);
             // 
             // LanguagesScreen
             // 

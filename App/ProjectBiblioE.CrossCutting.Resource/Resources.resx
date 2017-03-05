@@ -202,4 +202,7 @@
   <data name="Name" xml:space="preserve">
     <value>Nome</value>
   </data>
+  <data name="LanguageEdit" xml:space="preserve">
+    <value>Alterar Idioma</value>
+  </data>
 </root>
