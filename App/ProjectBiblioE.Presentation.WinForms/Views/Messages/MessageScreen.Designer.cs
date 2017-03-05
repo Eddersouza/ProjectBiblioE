@@ -31,9 +31,13 @@
             this.imgMessage = new System.Windows.Forms.PictureBox();
             this.lblMessageText = new MetroFramework.Controls.MetroLabel();
             this.pnlMessageOk = new MetroFramework.Controls.MetroPanel();
+            this.btnMessageYes = new MetroFramework.Controls.MetroButton();
             this.btnMessageOK = new MetroFramework.Controls.MetroButton();
+            this.btnMessageNo = new MetroFramework.Controls.MetroButton();
+            this.pnlMessageYesNo = new MetroFramework.Controls.MetroPanel();
             ((System.ComponentModel.ISupportInitialize)(this.imgMessage)).BeginInit();
             this.pnlMessageOk.SuspendLayout();
+            this.pnlMessageYesNo.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgMessage
@@ -68,6 +72,16 @@
             this.pnlMessageOk.VerticalScrollbarHighlightOnWheel = false;
             this.pnlMessageOk.VerticalScrollbarSize = 10;
             // 
+            // btnMessageYes
+            // 
+            this.btnMessageYes.Location = new System.Drawing.Point(482, 22);
+            this.btnMessageYes.Name = "btnMessageYes";
+            this.btnMessageYes.Size = new System.Drawing.Size(75, 23);
+            this.btnMessageYes.TabIndex = 3;
+            this.btnMessageYes.Text = "Sim";
+            this.btnMessageYes.UseSelectable = true;
+            this.btnMessageYes.Click += new System.EventHandler(this.btnMessageYes_Click);
+            // 
             // btnMessageOK
             // 
             this.btnMessageOK.Location = new System.Drawing.Point(563, 22);
@@ -78,12 +92,38 @@
             this.btnMessageOK.UseSelectable = true;
             this.btnMessageOK.Click += new System.EventHandler(this.btnMessageOK_Click);
             // 
+            // btnMessageNo
+            // 
+            this.btnMessageNo.Location = new System.Drawing.Point(563, 22);
+            this.btnMessageNo.Name = "btnMessageNo";
+            this.btnMessageNo.Size = new System.Drawing.Size(75, 23);
+            this.btnMessageNo.TabIndex = 4;
+            this.btnMessageNo.Text = "Não";
+            this.btnMessageNo.UseSelectable = true;
+            this.btnMessageNo.Click += new System.EventHandler(this.btnMessageNo_Click);
+            // 
+            // pnlMessageYesNo
+            // 
+            this.pnlMessageYesNo.Controls.Add(this.btnMessageNo);
+            this.pnlMessageYesNo.Controls.Add(this.btnMessageYes);
+            this.pnlMessageYesNo.HorizontalScrollbarBarColor = true;
+            this.pnlMessageYesNo.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlMessageYesNo.HorizontalScrollbarSize = 10;
+            this.pnlMessageYesNo.Location = new System.Drawing.Point(23, 154);
+            this.pnlMessageYesNo.Name = "pnlMessageYesNo";
+            this.pnlMessageYesNo.Size = new System.Drawing.Size(654, 62);
+            this.pnlMessageYesNo.TabIndex = 3;
+            this.pnlMessageYesNo.VerticalScrollbarBarColor = true;
+            this.pnlMessageYesNo.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlMessageYesNo.VerticalScrollbarSize = 10;
+            // 
             // MessageScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 232);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlMessageYesNo);
             this.Controls.Add(this.pnlMessageOk);
             this.Controls.Add(this.lblMessageText);
             this.Controls.Add(this.imgMessage);
@@ -92,6 +132,7 @@
             this.Text = "MessageScreen";
             ((System.ComponentModel.ISupportInitialize)(this.imgMessage)).EndInit();
             this.pnlMessageOk.ResumeLayout(false);
+            this.pnlMessageYesNo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +144,8 @@
         private MetroFramework.Controls.MetroLabel lblMessageText;
         private MetroFramework.Controls.MetroPanel pnlMessageOk;
         private MetroFramework.Controls.MetroButton btnMessageOK;
+        private MetroFramework.Controls.MetroButton btnMessageYes;
+        private MetroFramework.Controls.MetroButton btnMessageNo;
+        private MetroFramework.Controls.MetroPanel pnlMessageYesNo;
     }
 }

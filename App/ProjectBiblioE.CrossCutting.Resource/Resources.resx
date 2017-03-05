@@ -205,4 +205,13 @@
   <data name="LanguageEdit" xml:space="preserve">
     <value>Alterar Idioma</value>
   </data>
+  <data name="MSG_Do_You_Want_Delete_Record" xml:space="preserve">
+    <value>Você deseja excluir {0} {1}?</value>
+  </data>
+  <data name="MSG_Sussessfully_Deleted" xml:space="preserve">
+    <value>{0} {1} excluido com sucesso!</value>
+  </data>
+  <data name="MSG_Do_You_Want_Delete" xml:space="preserve">
+    <value>Você deseja excluir {0} {1}?</value>
+  </data>
 </root>

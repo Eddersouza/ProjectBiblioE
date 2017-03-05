@@ -50,7 +50,13 @@ namespace ProjectBiblioE.Infra.Data.Repositories
         /// <returns>True if exclude/ False if not.</returns>
         public bool Delete(string code)
         {
-            throw new NotImplementedException();
+            var language
+                = this.GetLanguages(new LanguageFilter { CultureCode = code })
+                .FirstOrDefault();
+            _context.Languages.Remove(language);
+            _context.SaveChanges();
+
+            return true;
         }
 
         /// <summary>

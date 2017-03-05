@@ -79,7 +79,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                 // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
-                ShowErrorMessage(message);
+                ShowMessageError(message);
 
                 this.ScreenClose();
             }
@@ -149,10 +149,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
 
                     if (colName.Equals(ColumnNameEdit)) this.OpenEditForm(language);
 
-                    if (colName.Equals(ColumnNameRemove))
-                    {
-                        //this.RemoveLanguage(language);
-                    }
+                    if (colName.Equals(ColumnNameRemove)) this.RemoveLanguage(language);
                 }
             }
             catch (Exception)
@@ -160,7 +157,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                 // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
-                ShowErrorMessage(message);
+                ShowMessageError(message);
 
                 this.ScreenClose();
             }
@@ -209,14 +206,83 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
         }
 
         /// <summary>
+        /// Remove Selected Language
+        /// </summary>
+        /// <param name="language">View Language</param>
+        private void RemoveLanguage(LanguageViewModel language)
+        {
+            try
+            {
+                string messageConfirm = this._messageContract.MountMessage(
+                    MessageBiblioE.MSG_Do_You_Want_Delete,
+                    LabelText.Language, language.CultureCode);
+
+                DialogResult messageResult = ShowMessageConfirm(messageConfirm);
+
+                if (messageResult == DialogResult.Yes)
+                {
+                    this._languageController.Delete(language.CultureCode);
+
+                    this.ScreenLoad();
+
+                    string messageSuccess = this._messageContract.MountMessage(
+                        MessageBiblioE.MSG_Sussessfully_Deleted,
+                        LabelText.Language, language.CultureCode);
+
+                    ShowMessageSuccess(messageSuccess);
+                }
+            }
+            catch (Exception)
+            {
+                // TODO: create log
+                string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
+
+                ShowMessageError(message);
+
+                this.ScreenClose();
+            }
+        }
+
+        /// <summary>
+        /// Show confirm message.
+        /// </summary>
+        /// <param name="message">Nessage to confirm.</param>
+        /// <returns>Result of confirm.</returns>
+        private DialogResult ShowMessageConfirm(string message)
+        {
+            MessageScreen messageConfirmDelete
+                   = new MessageScreen(
+                       MessageType.Confirm,
+                       message);
+
+            messageConfirmDelete.ShowDialog();
+
+            return MessageScreen.BtnResult;
+        }
+
+        /// <summary>
         /// Show message error.
         /// </summary>
         /// <param name="message">Message to error.</param>
-        private void ShowErrorMessage(string message)
+        private void ShowMessageError(string message)
         {
             MessageScreen messageError
                     = new MessageScreen(
                         MessageType.Error,
+                        message);
+
+            messageError.ShowDialog();
+        }
+
+        /// <summary>
+        /// Show message success.
+        /// </summary>
+        /// <param name="message">Message to success.</param>
+        private void ShowMessageSuccess(string message)
+        {
+            MessageScreen messageError
+                    = new MessageScreen(
+                        MessageType.Success,
                         message);
 
             messageError.ShowDialog();
@@ -252,7 +318,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                 // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
-                ShowErrorMessage(message);
+                ShowMessageError(message);
 
                 this.ScreenClose();
             }
@@ -288,7 +354,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Languages
                 // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 
-                ShowErrorMessage(message);
+                ShowMessageError(message);
 
                 this.ScreenClose();
             }

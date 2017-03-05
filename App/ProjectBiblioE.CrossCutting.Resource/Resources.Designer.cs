@@ -295,6 +295,24 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Você deseja excluir {0} {1}?.
+        /// </summary>
+        public static string MSG_Do_You_Want_Delete {
+            get {
+                return ResourceManager.GetString("MSG_Do_You_Want_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Você deseja excluir {0} {1}?.
+        /// </summary>
+        public static string MSG_Do_You_Want_Delete_Record {
+            get {
+                return ResourceManager.GetString("MSG_Do_You_Want_Delete_Record", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo {0} é obrigatório!.
         /// </summary>
         public static string MSG_Field_Required {
@@ -318,6 +336,15 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         public static string MSG_Success_Saved {
             get {
                 return ResourceManager.GetString("MSG_Success_Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} excluido com sucesso!.
+        /// </summary>
+        public static string MSG_Sussessfully_Deleted {
+            get {
+                return ResourceManager.GetString("MSG_Sussessfully_Deleted", resourceCulture);
             }
         }
         

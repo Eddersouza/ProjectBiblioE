@@ -11,6 +11,16 @@
         MSG_Alredy_Exists,
 
         /// <summary>
+        /// {0} {1} excluido com sucesso!
+        /// </summary>
+        MSG_Sussessfully_Deleted,
+
+        /// <summary>
+        /// Você deseja excluir {0} {1}?
+        /// </summary>
+        MSG_Do_You_Want_Delete,
+
+        /// <summary>
         /// O campo {0} é obrigatório!
         /// </summary>
         MSG_Field_Required,
