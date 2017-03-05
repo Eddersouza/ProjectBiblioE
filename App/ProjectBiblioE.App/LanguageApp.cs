@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 using ProjectBiblioE.Domain.Contracts.App;
 using ProjectBiblioE.Domain.Contracts.Filters;
@@ -53,7 +53,16 @@ namespace ProjectBiblioE.App
         /// <returns>True if success saved / False if not.</returns>
         public bool SaveEdited(Language language)
         {
-            throw new NotImplementedException();
+            Language languageSaved =
+                this.GetLanguages(
+                    new LanguageFilter
+                    {
+                        CultureCode = language.CultureCode
+                    }).FirstOrDefault();
+
+            languageSaved.Name = language.Name;
+
+            return this._languageContract.SaveEdited(languageSaved);
         }
     }
 }

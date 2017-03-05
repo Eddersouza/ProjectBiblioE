@@ -26,5 +26,10 @@ namespace ProjectBlibioE.Tests
         {
             return this._languageApp.Save(language);
         }
+
+        public bool SaveEdited(Language language)
+        {
+            return this._languageApp.SaveEdited(language);
+        }
     }
 }

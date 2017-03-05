@@ -38,5 +38,10 @@ namespace ProjectBlibioE.Tests.Repository
         {
             return this._languageContract.Save(language);
         }
+
+        public bool SaveEdited(Language language)
+        {
+            return this._languageContract.SaveEdited(language);
+        }
     }
 }

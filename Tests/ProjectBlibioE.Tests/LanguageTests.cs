@@ -2,14 +2,14 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using ProjectBiblioE.CrossCutting.Helpers;
 using ProjectBiblioE.Domain.Contracts.Filters;
+using ProjectBiblioE.Domain.Contracts.Utils;
+using ProjectBiblioE.Domain.Entities;
+using ProjectBiblioE.Domain.Enums;
+using ProjectBiblioE.Domain.Exceptions;
 
 using ProjectBlibioE.Tests.IoC;
-using ProjectBiblioE.Domain.Entities;
-using ProjectBiblioE.Domain.Exceptions;
-using ProjectBiblioE.Domain.Contracts.Utils;
-using ProjectBiblioE.CrossCutting.Helpers;
-using ProjectBiblioE.Domain.Enums;
 
 namespace ProjectBlibioE.Tests
 {
@@ -17,11 +17,12 @@ namespace ProjectBlibioE.Tests
     public class LanguageTests
     {
         private readonly LanguageController _languageController;
+        private readonly MessageContract _messageContract;
+
         private string culture = "pt-BR";
         private string cultureNew = "fr-FR";
         private string name = "Português - Brasil";
         private string nameNew = "Francês - França";
-        private readonly MessageContract _messageContract;
 
         public LanguageTests()
         {
@@ -74,21 +75,6 @@ namespace ProjectBlibioE.Tests
         }
 
         [TestMethod]
-        public void SaveLanguage()
-        {
-            // Arrange
-            Language language = new Language();
-            language.CultureCode = cultureNew;
-            language.Name = nameNew;
-
-            // Act
-            bool hasSaved = this._languageController.Save(language);
-
-            // Assert
-            Assert.IsTrue(hasSaved);
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(BiblioEException))]
         public void SaveExistingLanguage()
         {
@@ -114,6 +100,43 @@ namespace ProjectBlibioE.Tests
                 Assert.AreEqual(messageAlreadExists, ex.Message);
                 throw;
             }
+        }
+
+        [TestMethod]
+        public void SaveLanguage()
+        {
+            // Arrange
+            Language language = new Language();
+            language.CultureCode = cultureNew;
+            language.Name = nameNew;
+
+            // Act
+            bool hasSaved = this._languageController.Save(language);
+
+            // Assert
+            Assert.IsTrue(hasSaved);
+        }
+
+        [TestMethod]
+        public void SaveLanguageEdited()
+        {
+            // Arrange
+            Language language = new Language();
+            language.CultureCode = culture;
+            language.Name = nameNew;
+
+            // Act
+            var languageSaved =
+                this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
+
+            bool hasSaved = this._languageController.SaveEdited(language);
+
+            var languageEdited =
+                this._languageController.GetLanguages(new LanguageFilter { CultureCode = culture }).FirstOrDefault();
+
+            // Assert
+            Assert.IsTrue(hasSaved);
+            Assert.AreNotEqual(name, languageEdited.Name);
         }
 
         [TestMethod]

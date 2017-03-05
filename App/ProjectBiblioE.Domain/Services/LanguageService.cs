@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
@@ -82,7 +81,7 @@ namespace ProjectBiblioE.Domain.Services
         /// <returns>True if success saved / False if not.</returns>
         public bool SaveEdited(Language language)
         {
-            throw new NotImplementedException();
+            return this._languageRepository.SaveEdited(language);
         }
 
         /// <summary>

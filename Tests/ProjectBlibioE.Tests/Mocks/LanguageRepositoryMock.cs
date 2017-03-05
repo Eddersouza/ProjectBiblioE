@@ -16,12 +16,15 @@ namespace ProjectBlibioE.Tests.Mocks
             Mock<LanguageRepositoryContract> mockRepository = new Mock<LanguageRepositoryContract>();
 
             MockCreateSetupGetLanguage(ref mockRepository, mockLanguage);
-            MockCreateSetupsetup(ref mockRepository, mockLanguage);
+            MockCreateSetupSave(ref mockRepository, mockLanguage);
+            MockCreateSetupSaveEdited(ref mockRepository, mockLanguage);
 
             return mockRepository;
         }
 
-        private void MockCreateSetupGetLanguage(ref Mock<LanguageRepositoryContract> mockApp, IList<Language> mockLanguage)
+        private void MockCreateSetupGetLanguage(
+            ref Mock<LanguageRepositoryContract> mockApp,
+            IList<Language> mockLanguage)
         {
             mockApp.Setup(
                lg => lg
@@ -48,7 +51,9 @@ namespace ProjectBlibioE.Tests.Mocks
                });
         }
 
-        private void MockCreateSetupsetup(ref Mock<LanguageRepositoryContract> mockApp, IList<Language> mockLanguage)
+        private void MockCreateSetupSave(
+            ref Mock<LanguageRepositoryContract> mockApp,
+            IList<Language> mockLanguage)
         {
             mockApp.Setup(ls =>
                 ls.Save(It.IsAny<Language>()))
@@ -61,6 +66,27 @@ namespace ProjectBlibioE.Tests.Mocks
                     }
                     return false;
                 });
+        }
+
+        private void MockCreateSetupSaveEdited(
+            ref Mock<LanguageRepositoryContract> mockApp,
+            IList<Language> mockLanguage)
+        {
+            mockApp.Setup(ls =>
+               ls.SaveEdited(It.IsAny<Language>()))
+               .Returns((Language obj) =>
+               {
+                   var language = mockLanguage.Where(l => l.CultureCode.Equals(obj.CultureCode));
+
+                   if (language != null && language.Count() == 1)
+                   {
+                       language.FirstOrDefault().Name = obj.Name;
+                       return true;
+
+                   }
+
+                   return false;
+               });
         }
     }
 }
