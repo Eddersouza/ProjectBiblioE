@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Repository;
@@ -19,7 +20,7 @@ namespace ProjectBiblioE.Domain.Services
         /// Instance of language repository.
         /// </summary>
         private readonly LanguageRepositoryContract _languageRepository;
-        
+
         /// <summary>
         /// Instance of language repository.
         /// </summary>
@@ -53,27 +54,75 @@ namespace ProjectBiblioE.Domain.Services
         /// <param name="language">Language to save.</param>
         public bool Save(Language language)
         {
-            var obj =
-                this._languageRepository
-                    .GetLanguages(
-                        new LanguageFilter
-                        {
-                            CultureCode = language.CultureCode
-                        });
+            var objList = this._languageRepository.GetLanguages(
+                    new LanguageFilter
+                    {
+                        CultureCode = language.CultureCode,
+                        Name = language.Name,
+                    });
 
-            if (obj != null && obj.Count != 0)
-            {
-                string messageAlreadExists
-                    = this._messageContract
-                    .MountMessage(
-                        MessageBiblioE.MSG_Alredy_Exists,
-                        LabelText.Language.ToString(),
-                        language.CultureCode);
+            if (ExistLanguage(objList, language))
+                this.ThrowMessage(
+                    MessageBiblioE.MSG_Alredy_Exists, LabelText.Language, language.CultureCode);
 
-                throw new BiblioEException(messageAlreadExists);
-            }
+            if (string.IsNullOrEmpty(language.CultureCode))
+                this.ThrowMessage(MessageBiblioE.MSG_Field_Required, LabelText.Code);
+
+            if (string.IsNullOrEmpty(language.Name))
+                this.ThrowMessage(MessageBiblioE.MSG_Field_Required, LabelText.Name);
+
 
             return this._languageRepository.Save(language);
+        }
+
+        /// <summary>
+        /// Throw Messages.
+        /// </summary>
+        /// <param name="messagePatern">Pattern to message.</param>
+        /// <param name="paramsMessage">Params to message</param>
+        private void ThrowMessage(MessageBiblioE messagePatern, params string[] paramsMessage)
+        {
+            string messageFieldRequired
+                = _messageContract.MountMessage(messagePatern, paramsMessage);
+
+            throw new BiblioEException(messageFieldRequired);
+        }
+
+        /// <summary>
+        /// Throw Messages.
+        /// </summary>
+        /// <param name="messagePatern">Pattern to message.</param>
+        /// <param name="paramsMessage">Params to message</param>
+        private void ThrowMessage(MessageBiblioE messagePatern, LabelText subject, params string[] paramsMessage)
+        {
+            string messageFieldRequired
+                = _messageContract.MountMessage(messagePatern, subject, paramsMessage);
+
+            throw new BiblioEException(messageFieldRequired);
+        }
+
+        /// <summary>
+        /// Verifi if language already exists.
+        /// </summary>
+        /// <param name="languages">Languages to compare.</param>
+        /// <param name="language">Language to test.</param>
+        /// <returns>True if exists/ False if not.</returns>
+        private bool ExistLanguage(List<Language> languages, Language language)
+        {
+            bool exists = false;
+
+            if (languages != null && languages.Count != 0)
+            {
+                var obj = languages.FirstOrDefault();
+
+                if (obj.CultureCode.Equals(language.CultureCode)
+                    || obj.Name.Equals(language.Name))
+                {
+                    exists = true;
+                }
+            }
+
+            return exists;
         }
     }
 }

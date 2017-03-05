@@ -7,6 +7,9 @@ using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBlibioE.Tests.IoC;
 using ProjectBiblioE.Domain.Entities;
 using ProjectBiblioE.Domain.Exceptions;
+using ProjectBiblioE.Domain.Contracts.Utils;
+using ProjectBiblioE.CrossCutting.Helpers;
+using ProjectBiblioE.Domain.Enums;
 
 namespace ProjectBlibioE.Tests
 {
@@ -18,11 +21,13 @@ namespace ProjectBlibioE.Tests
         private string cultureNew = "fr-FR";
         private string name = "Português - Brasil";
         private string nameNew = "Francês - França";
+        private readonly MessageContract _messageContract;
 
         public LanguageTests()
         {
             CompositionRoot.Wire(new IoCModule());
             _languageController = CompositionRoot.Resolve<LanguageController>();
+            _messageContract = new MessageBuilder();
         }
 
         [TestMethod]
@@ -35,7 +40,7 @@ namespace ProjectBlibioE.Tests
             var list = _languageController.GetLanguages(filter);
 
             // Assert
-            Assert.IsNotNull(list);            
+            Assert.IsNotNull(list);
         }
 
         [TestMethod]
@@ -92,10 +97,77 @@ namespace ProjectBlibioE.Tests
             language.CultureCode = culture;
             language.Name = name;
 
-            // Act
-            bool hasSaved = this._languageController.Save(language);
+            try
+            {
+                // Act
+                bool hasSaved = this._languageController.Save(language);
+            }
+            catch (BiblioEException ex)
+            {
+                string messageAlreadExists
+                        = this._messageContract
+                        .MountMessage(
+                            MessageBiblioE.MSG_Alredy_Exists,
+                            LabelText.Language,
+                            language.CultureCode);
 
-           
+                Assert.AreEqual(messageAlreadExists, ex.Message);
+                throw;
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(BiblioEException))]
+        public void SaveLanguageWithEmptyCulture()
+        {
+            // Arrange
+            Language language = new Language();
+            language.CultureCode = string.Empty;
+            language.Name = nameNew;
+
+            try
+            {
+                // Act
+                bool hasSaved = this._languageController.Save(language);
+            }
+            catch (BiblioEException ex)
+            {
+                string messageFieldRequired
+                        = this._messageContract
+                        .MountMessage(
+                            MessageBiblioE.MSG_Field_Required,
+                            LabelText.Code);
+
+                Assert.AreEqual(messageFieldRequired, ex.Message);
+                throw;
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(BiblioEException))]
+        public void SaveLanguageWithEmptyName()
+        {
+            // Arrange
+            Language language = new Language();
+            language.CultureCode = cultureNew;
+            language.Name = string.Empty;
+
+            try
+            {
+                // Act
+                bool hasSaved = this._languageController.Save(language);
+            }
+            catch (BiblioEException ex)
+            {
+                string messageFieldRequired
+                         = this._messageContract
+                         .MountMessage(
+                             MessageBiblioE.MSG_Field_Required,
+                             LabelText.Name);
+
+                Assert.AreEqual(messageFieldRequired, ex.Message);
+                throw;
+            }
         }
     }
 }

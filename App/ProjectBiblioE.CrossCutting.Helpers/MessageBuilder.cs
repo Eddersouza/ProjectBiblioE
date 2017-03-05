@@ -5,6 +5,7 @@ using System.Resources;
 using ProjectBiblioE.CrossCutting.Resource;
 using ProjectBiblioE.Domain.Contracts.Utils;
 using ProjectBiblioE.Domain.Enums;
+using System.Collections;
 
 namespace ProjectBiblioE.CrossCutting.Helpers
 {
@@ -70,7 +71,7 @@ namespace ProjectBiblioE.CrossCutting.Helpers
                 listParams.Add(param);
             }
 
-            messageComplete = string.Format(messagetemp, listParams.ToArray());
+            messageComplete = this.MountMessage(message, listParams.ToArray());
 
             return messageComplete;
         }

@@ -2,10 +2,14 @@
 {
     public enum LabelText
     {
+        Code,
+
         Language,
 
         Languages,
 
-        LanguageNew
+        LanguageNew,
+
+        Name
     }
 }

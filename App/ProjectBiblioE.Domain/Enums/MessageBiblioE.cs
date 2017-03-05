@@ -11,13 +11,18 @@
         MSG_Alredy_Exists,
 
         /// <summary>
-        /// {0} {1} salvo com sucesso!
+        /// O campo {0} é obrigatório!
         /// </summary>
-        MSG_Success_Saved,
+        MSG_Field_Required,
 
         /// <summary>
         /// Generic error.
         /// </summary>
-        MSG_GenericError
+        MSG_GenericError,
+
+        /// <summary>
+        /// {0} {1} salvo com sucesso!
+        /// </summary>
+        MSG_Success_Saved        
     }
 }

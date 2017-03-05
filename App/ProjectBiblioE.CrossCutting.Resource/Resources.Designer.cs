@@ -61,6 +61,15 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        public static string Code {
+            get {
+                return ResourceManager.GetString("Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar {0}.
         /// </summary>
         public static string GridViewExtensions_Edit {
@@ -277,11 +286,38 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo {0} é obrigatório!.
+        /// </summary>
+        public static string MSG_Field_Required {
+            get {
+                return ResourceManager.GetString("MSG_Field_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocorreu um erro, tente novamente ou entre em contato com o suporte..
+        /// </summary>
+        public static string MSG_GenericError {
+            get {
+                return ResourceManager.GetString("MSG_GenericError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} {1} salvo com sucesso!.
         /// </summary>
         public static string MSG_Success_Saved {
             get {
                 return ResourceManager.GetString("MSG_Success_Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
     }

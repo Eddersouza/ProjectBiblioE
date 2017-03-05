@@ -193,4 +193,13 @@
   <data name="MSG_GenericError" xml:space="preserve">
     <value>Ocorreu um erro, tente novamente ou entre em contato com o suporte.</value>
   </data>
+  <data name="MSG_Field_Required" xml:space="preserve">
+    <value>O campo {0} é obrigatório!</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
 </root>
