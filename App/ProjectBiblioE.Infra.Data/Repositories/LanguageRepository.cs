@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -11,7 +10,7 @@ using ProjectBiblioE.Infra.Data.EF;
 namespace ProjectBiblioE.Infra.Data.Repositories
 {
     /// <summary>
-    /// Language Repository
+    /// Language Repository.
     /// </summary>
     public class LanguageRepository : LanguageRepositoryContract
     {

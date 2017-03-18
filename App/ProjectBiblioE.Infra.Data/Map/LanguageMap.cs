@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ProjectBiblioE.Infra.Data.Map
 {
     /// <summary>
-    /// Map Language properties
+    /// Map Language properties.
     /// </summary>
     public class LanguageMap : EntityTypeConfiguration<Language>
     {

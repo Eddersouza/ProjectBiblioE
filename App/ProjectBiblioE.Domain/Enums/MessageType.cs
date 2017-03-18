@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectBiblioE.Domain.Enums
+﻿namespace ProjectBiblioE.Domain.Enums
 {
     /// <summary>
     /// Represent messages type in the system.
