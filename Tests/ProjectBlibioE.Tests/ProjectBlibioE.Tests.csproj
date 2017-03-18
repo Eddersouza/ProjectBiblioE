@@ -53,12 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="GenreTest.cs" />
     <Compile Include="IoC\CompositionRoot.cs" />
     <Compile Include="IoC\IoCModule.cs" />
     <Compile Include="LanguageTests.cs" />
+    <Compile Include="Mocks\GenreRepositoryMock.cs" />
     <Compile Include="Mocks\LanguageRepositoryMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenreRepositoryTests.cs" />
     <Compile Include="Repository\LanguageRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>

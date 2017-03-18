@@ -45,6 +45,7 @@ namespace ProjectBiblioE.Infra.Data.EF
                 .Configure(p => p.HasColumnType("varchar"));
 
             modelBuilder.Configurations.Add(new LanguageMap());
+            modelBuilder.Configurations.Add(new GenreMap());
         }
     }
 }

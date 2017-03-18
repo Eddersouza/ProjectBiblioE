@@ -33,17 +33,23 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\App\GenreAppContract.cs" />
     <Compile Include="Contracts\App\LanguageAppContract.cs" />
+    <Compile Include="Contracts\Filters\GenreFilter.cs" />
     <Compile Include="Contracts\Filters\LanguageFilter.cs" />
+    <Compile Include="Contracts\Repository\GenreRepositoryContract.cs" />
     <Compile Include="Contracts\Repository\LanguageRepositoryContract.cs" />
+    <Compile Include="Contracts\Services\GenreServiceContract.cs" />
     <Compile Include="Contracts\Services\LanguageServiceContract.cs" />
     <Compile Include="Contracts\Utils\MessageContract.cs" />
+    <Compile Include="Entities\Genre.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Enums\LabelText.cs" />
     <Compile Include="Enums\MessageBiblioE.cs" />
     <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Exceptions\BiblioEException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GenreService.cs" />
     <Compile Include="Services\LanguageService.cs" />
   </ItemGroup>
   <ItemGroup />
