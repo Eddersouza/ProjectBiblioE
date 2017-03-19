@@ -8,6 +8,7 @@ using ProjectBiblioE.Domain.Contracts.Services;
 using ProjectBiblioE.Domain.Contracts.Utils;
 using ProjectBiblioE.Domain.Services;
 
+using ProjectBlibioE.Tests.Mocks;
 using ProjectBlibioE.Tests.Repository;
 
 namespace ProjectBlibioE.Tests.IoC
@@ -22,6 +23,11 @@ namespace ProjectBlibioE.Tests.IoC
             Bind(typeof(LanguageAppContract)).To(typeof(LanguageApp));
             Bind(typeof(LanguageServiceContract)).To(typeof(LanguageService));
             Bind(typeof(LanguageRepositoryContract)).To(typeof(LanguageRepositoryTests));
+
+            Bind(typeof(GenreAppContract)).To(typeof(GenreApp));
+            Bind(typeof(GenreServiceContract)).To(typeof(GenreService));
+            Bind(typeof(GenreRepositoryContract)).To(typeof(GenreRepositoryMock));
+
             Bind(typeof(MessageContract)).To(typeof(MessageBuilder));
         }
     }

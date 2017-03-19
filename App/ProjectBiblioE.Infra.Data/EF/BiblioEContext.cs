@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity.SqlServer;
 
 using ProjectBiblioE.Domain.Entities;
 using ProjectBiblioE.Infra.Data.Map;
-using System.Data.Entity.SqlServer;
 using ProjectBiblioE.Infra.Data.Migrations;
 
 namespace ProjectBiblioE.Infra.Data.EF
@@ -21,7 +21,14 @@ namespace ProjectBiblioE.Infra.Data.EF
         {
             var ensureDLLIsCopied = SqlProviderServices.Instance;
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BiblioEContext, Configuration>("ProjectBiblioEDataSource"));
+        }
 
+        /// <summary>
+        /// Instance of context languages.
+        /// </summary>
+        public DbSet<Genre> Genres
+        {
+            get; set;
         }
 
         /// <summary>

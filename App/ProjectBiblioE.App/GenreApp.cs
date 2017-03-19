@@ -1,5 +1,9 @@
-﻿using ProjectBiblioE.Domain.Contracts.App;
+﻿using System.Collections.Generic;
+
+using ProjectBiblioE.Domain.Contracts.App;
+using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Contracts.Services;
+using ProjectBiblioE.Domain.Entities;
 
 namespace ProjectBiblioE.App
 {
@@ -11,7 +15,7 @@ namespace ProjectBiblioE.App
         /// <summary>
         /// Instance of service.
         /// </summary>
-        private readonly GenreServiceContract _service;
+        private readonly GenreServiceContract _genreService;
 
         /// <summary>
         /// Default constructor.
@@ -19,7 +23,17 @@ namespace ProjectBiblioE.App
         /// <param name="service">Instance of service.</param>
         public GenreApp(GenreServiceContract service)
         {
-            this._service = service;
+            this._genreService = service;
+        }
+
+        /// <summary>
+        /// Get recorded genres.
+        /// </summary>
+        /// <param name="filters">Filter to genres.</param>
+        /// <returns>List of genres</returns>
+        public List<Genre> GetGenres(GenreFilter filters)
+        {
+            return this._genreService.GetGenres(filters);
         }
     }
 }
