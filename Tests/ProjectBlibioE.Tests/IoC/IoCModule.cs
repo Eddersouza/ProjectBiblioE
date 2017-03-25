@@ -26,7 +26,7 @@ namespace ProjectBlibioE.Tests.IoC
 
             Bind(typeof(GenreAppContract)).To(typeof(GenreApp));
             Bind(typeof(GenreServiceContract)).To(typeof(GenreService));
-            Bind(typeof(GenreRepositoryContract)).To(typeof(GenreRepositoryMock));
+            Bind(typeof(GenreRepositoryContract)).To(typeof(GenreRepositoryTests));
 
             Bind(typeof(MessageContract)).To(typeof(MessageBuilder));
         }

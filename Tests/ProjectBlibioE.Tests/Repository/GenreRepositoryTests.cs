@@ -1,10 +1,11 @@
-﻿using ProjectBiblioE.Domain.Contracts.Repository;
+﻿using System.Collections.Generic;
+using Moq;
+
+using ProjectBiblioE.Domain.Contracts.Filters;
+using ProjectBiblioE.Domain.Contracts.Repository;
 using ProjectBiblioE.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using ProjectBlibioE.Tests.Mocks;
 
 namespace ProjectBlibioE.Tests.Repository
 {
@@ -12,11 +13,20 @@ namespace ProjectBlibioE.Tests.Repository
     {
         private readonly GenreRepositoryContract _genreRepository;
 
-        private IList<Genre> mockGenre = new List<Genre>();
+        public static IList<Genre> mockGenre = new List<Genre>();
 
-        public GenreRepositoryTests(GenreRepositoryContract genreRepository)
+        public GenreRepositoryTests()
         {
-            _genreRepository = genreRepository;
+            GenreRepositoryMock mock = new GenreRepositoryMock();
+            
+            Mock<GenreRepositoryContract> mockApp = mock.createMock(mockGenre);
+
+            this._genreRepository = mockApp.Object;
+        }
+
+        public List<Genre> GetGenres(GenreFilter filters)
+        {
+            return this._genreRepository.GetGenres(filters);
         }
     }
 }

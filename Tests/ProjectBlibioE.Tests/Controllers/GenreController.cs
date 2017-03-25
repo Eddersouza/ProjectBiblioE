@@ -1,4 +1,8 @@
-﻿using ProjectBiblioE.Domain.Contracts.App;
+﻿using System.Collections.Generic;
+
+using ProjectBiblioE.Domain.Contracts.App;
+using ProjectBiblioE.Domain.Contracts.Filters;
+using ProjectBiblioE.Domain.Entities;
 
 namespace ProjectBlibioE.Tests.Controllers
 {
@@ -9,6 +13,13 @@ namespace ProjectBlibioE.Tests.Controllers
         public GenreController(GenreAppContract genreApp)
         {
             _genreApp = genreApp;
+        }
+
+        public List<Genre> GetGenres(GenreFilter filters)
+        {
+            List<Genre> languages = _genreApp.GetGenres(filters);
+
+            return languages;
         }
     }
 }

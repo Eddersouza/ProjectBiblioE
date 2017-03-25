@@ -11,6 +11,8 @@ using ProjectBiblioE.Domain.Exceptions;
 
 using ProjectBlibioE.Tests.Controllers;
 using ProjectBlibioE.Tests.IoC;
+using System.Collections.Generic;
+using ProjectBlibioE.Tests.Repository;
 
 namespace ProjectBlibioE.Tests
 {
@@ -27,9 +29,16 @@ namespace ProjectBlibioE.Tests
 
         public LanguageTests()
         {
+            List<Language> list = new List<Language>();
+
+            list.Add(new Language { CultureCode = "pt-BR", Name = "Português - Brasil" });
+            list.Add(new Language { CultureCode = "es-ES", Name = "Espanhol - Espanha" });
+            list.Add(new Language { CultureCode = "en-US", Name = "Inglês - Estados Unidos" });
+
+            LanguageRepositoryTests.mockLanguage = list;
             CompositionRoot.Wire(new IoCModule());
             _languageController = CompositionRoot.Resolve<LanguageController>();
-            _messageContract = new MessageBuilder();
+            _messageContract = new MessageBuilder();           
         }
 
         [TestMethod]
