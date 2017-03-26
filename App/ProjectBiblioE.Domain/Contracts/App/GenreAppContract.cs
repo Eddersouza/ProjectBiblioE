@@ -16,5 +16,12 @@ namespace ProjectBiblioE.Domain.Contracts.App
         /// <param name="filters">Filters to genre.</param>
         /// <returns>List of genres.</returns>
         List<Genre> GetGenres(GenreFilter filters);
+
+        /// <summary>
+        /// Save genre.
+        /// </summary>
+        /// <param name="genre">Genre to save.</param>
+        /// <returns>True if save/ False if not.</returns>
+        bool Save(Genre genre);
     }
 }
