@@ -37,7 +37,9 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
         {
             this.Cursor = Cursors.WaitCursor;
 
-            GenresScreen genresScreen = new GenresScreen(_resources);
+            GenresScreen genresScreen
+                = new GenresScreen(_resources);
+            genresScreen.ScreenLoad();
             genresScreen.ShowDialog();
 
             this.Cursor = Cursors.Default;
@@ -47,7 +49,7 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Principal
         {
             this.Cursor = Cursors.WaitCursor;
 
-            LanguagesScreen languagenScreen 
+            LanguagesScreen languagenScreen
                 = new LanguagesScreen(this._resources);
             languagenScreen.ScreenLoad();
             languagenScreen.ShowDialog();

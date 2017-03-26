@@ -214,4 +214,10 @@
   <data name="MSG_Do_You_Want_Delete" xml:space="preserve">
     <value>Você deseja excluir {0} {1}?</value>
   </data>
+  <data name="GenreViewModel_GenreId" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="GenreViewModel_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
 </root>

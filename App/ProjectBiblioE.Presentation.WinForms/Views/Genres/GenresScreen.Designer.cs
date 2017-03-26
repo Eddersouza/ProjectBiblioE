@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnGenreNew = new MetroFramework.Controls.MetroButton();
             this.grpGenreSearch = new System.Windows.Forms.GroupBox();
-            this.lblGenreNameSearch = new MetroFramework.Controls.MetroLabel();
             this.txtGenreNameSearch = new MetroFramework.Controls.MetroTextBox();
+            this.lblGenreNameSearch = new MetroFramework.Controls.MetroLabel();
             this.gridGenres = new MetroFramework.Controls.MetroGrid();
             this.grpGenreSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridGenres)).BeginInit();
@@ -61,15 +61,6 @@
             this.grpGenreSearch.TabIndex = 1;
             this.grpGenreSearch.TabStop = false;
             this.grpGenreSearch.Text = "Busca";
-            // 
-            // lblGenreNameSearch
-            // 
-            this.lblGenreNameSearch.AutoSize = true;
-            this.lblGenreNameSearch.Location = new System.Drawing.Point(18, 20);
-            this.lblGenreNameSearch.Name = "lblGenreNameSearch";
-            this.lblGenreNameSearch.Size = new System.Drawing.Size(46, 19);
-            this.lblGenreNameSearch.TabIndex = 0;
-            this.lblGenreNameSearch.Text = "Nome";
             // 
             // txtGenreNameSearch
             // 
@@ -100,6 +91,16 @@
             this.txtGenreNameSearch.UseSelectable = true;
             this.txtGenreNameSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGenreNameSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtGenreNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtGenreNameSearch_KeyUp);
+            // 
+            // lblGenreNameSearch
+            // 
+            this.lblGenreNameSearch.AutoSize = true;
+            this.lblGenreNameSearch.Location = new System.Drawing.Point(18, 20);
+            this.lblGenreNameSearch.Name = "lblGenreNameSearch";
+            this.lblGenreNameSearch.Size = new System.Drawing.Size(46, 19);
+            this.lblGenreNameSearch.TabIndex = 0;
+            this.lblGenreNameSearch.Text = "Nome";
             // 
             // gridGenres
             // 

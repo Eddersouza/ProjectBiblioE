@@ -70,6 +70,24 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Código.
+        /// </summary>
+        public static string GenreViewModel_GenreId {
+            get {
+                return ResourceManager.GetString("GenreViewModel_GenreId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome.
+        /// </summary>
+        public static string GenreViewModel_Name {
+            get {
+                return ResourceManager.GetString("GenreViewModel_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar {0}.
         /// </summary>
         public static string GridViewExtensions_Edit {

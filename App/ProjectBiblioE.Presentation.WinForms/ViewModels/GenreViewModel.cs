@@ -1,4 +1,6 @@
-﻿using ProjectBiblioE.Domain.Entities;
+﻿using ProjectBiblioE.CrossCutting.Resource;
+using ProjectBiblioE.Domain.Entities;
+using ProjectBiblioE.Presentation.WinForms.Utils.Attributes;
 
 namespace ProjectBiblioE.Presentation.WinForms.ViewModels
 {
@@ -27,6 +29,7 @@ namespace ProjectBiblioE.Presentation.WinForms.ViewModels
         /// <summary>
         /// Genre ID.
         /// </summary>
+        [CustomTableAttributes(ColumnName = "GenreViewModel_GenreId", ColumnOrder = 0, FitColumn = true, ResourceType = typeof(Resources))]
         public int GenreId
         {
             get; set;
@@ -35,6 +38,7 @@ namespace ProjectBiblioE.Presentation.WinForms.ViewModels
         /// <summary>
         /// Genre Name.
         /// </summary>
+        [CustomTableAttributes(ColumnName = "GenreViewModel_Name", ColumnOrder = 1, ResourceType = typeof(Resources))]
         public string Name
         {
             get; set;
