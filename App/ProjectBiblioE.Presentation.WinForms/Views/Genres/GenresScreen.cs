@@ -81,6 +81,26 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Genres
             this.Cursor = Cursors.Default;
         }
 
+        /// <summary>
+        /// Open screen new genre.
+        /// </summary>
+        /// <param name="sender">Button new genre</param>
+        /// <param name="e">Events Argument</param>
+        private void BtnGenreNew_Click(object sender, EventArgs e)
+        {
+            GenreAddEditScreen genreNewScreen
+               = new GenreAddEditScreen(
+                   null,
+                   _genreController,
+                   _messageContract,
+                   _resources);
+
+            genreNewScreen.PrincipalScreen = this;
+            genreNewScreen.ScreenLoad();
+
+            genreNewScreen.ShowDialog();
+        }
+
         private void PopulateGridGenres(List<GenreViewModel> list)
         {
             if (list != null && list.Count > 0)

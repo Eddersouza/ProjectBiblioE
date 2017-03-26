@@ -70,6 +70,51 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gênero.
+        /// </summary>
+        public static string Genre {
+            get {
+                return ResourceManager.GetString("Genre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gênero.
+        /// </summary>
+        public static string Genre_Module {
+            get {
+                return ResourceManager.GetString("Genre_Module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alterar Gênero.
+        /// </summary>
+        public static string GenreEdit {
+            get {
+                return ResourceManager.GetString("GenreEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Novo Gênero.
+        /// </summary>
+        public static string GenreNew {
+            get {
+                return ResourceManager.GetString("GenreNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gêneros.
+        /// </summary>
+        public static string Genres {
+            get {
+                return ResourceManager.GetString("Genres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Código.
         /// </summary>
         public static string GenreViewModel_GenreId {

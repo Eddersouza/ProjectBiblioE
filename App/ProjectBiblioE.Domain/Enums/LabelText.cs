@@ -30,6 +30,26 @@
         /// <summary>
         /// Label Name
         /// </summary>
-        Name
+        Name,
+
+        /// <summary>
+        /// Label Genre.
+        /// </summary>
+        Genre,
+
+        /// <summary>
+        /// Label Genre Edit.
+        /// </summary>
+        GenreEdit,
+
+        /// <summary>
+        /// Label genre new.
+        /// </summary>
+        GenreNew,
+
+        /// <summary>
+        /// Label genres.
+        /// </summary>
+        Genres
     }
 }
