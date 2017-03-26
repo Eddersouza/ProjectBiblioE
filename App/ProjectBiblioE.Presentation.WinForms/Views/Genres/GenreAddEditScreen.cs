@@ -16,6 +16,8 @@ using ProjectBiblioE.Presentation.WinForms.ViewModels;
 using ProjectBiblioE.Domain.Contracts.Utils;
 using System.Resources;
 using ProjectBiblioE.Domain.Enums;
+using ProjectBiblioE.Domain.Exceptions;
+using ProjectBiblioE.Presentation.WinForms.Views.Messages;
 
 namespace ProjectBiblioE.Presentation.WinForms.Views.Genres
 {
@@ -96,9 +98,99 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Genres
             this.txtHiddenGenreId.Text = "0";
         }
 
+        /// <summary>
+        /// Event of click button save.
+        /// </summary>
+        /// <param name="sender">Button Save.</param>
+        /// <param name="e">Event argument.</param>
         private void btnGenreSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                GenreViewModel view = getDataFromScreen();
+                
+                this._genreController.Save(view);
 
+                this.PrincipalScreen.ScreenLoad();
+                
+                ShowSuccessMessage(view.Name);
+
+                this.ScreenClose();
+            }
+            catch (BiblioEException ex)
+            {
+                ShowAlertMessage(ex.Message);
+
+                this.ScreenClose();
+            }
+            catch (Exception)
+            {
+                // TODO: create log
+                string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
+
+                ShowErrorMessage(message);
+
+                this.ScreenClose();
+            }
+        }
+
+        /// <summary>
+        /// Get values from screen.
+        /// </summary>
+        /// <returns></returns>
+        private GenreViewModel getDataFromScreen()
+        {
+            GenreViewModel view = new GenreViewModel();
+
+            view.Name = txtGenreName.Text;
+
+            return view;
+        }
+
+        /// <summary>
+        /// Show alert message.
+        /// </summary>
+        /// <param name="message">Message to alert./param>
+        private void ShowAlertMessage(string message)
+        {
+            MessageScreen messageAlert
+                    = new MessageScreen(
+                        MessageType.Alert,
+                        message);
+
+            messageAlert.ShowDialog();
+        }
+
+        /// <summary>
+        /// Show message error.
+        /// </summary>
+        /// <param name="message">Message to error.</param>
+        private void ShowErrorMessage(string message)
+        {
+            MessageScreen messageError
+                    = new MessageScreen(
+                        MessageType.Error,
+                        message);
+
+            messageError.ShowDialog();
+        }
+
+        /// <summary>
+        /// Show message sucess.
+        /// </summary>
+        /// <param name="cultureCode">Culture code to message.</param>
+        private void ShowSuccessMessage(string cultureCode)
+        {
+            string messageSuccessSaved
+                    = this._messageContract
+                        .MountMessage(
+                        MessageBiblioE.MSG_Success_Saved,
+                        _resources.GetString(LabelText.Genre.ToString()),
+                        cultureCode);
+
+            MessageScreen messageSuccess
+                = new MessageScreen(MessageType.Success, messageSuccessSaved);
+            messageSuccess.ShowDialog();
         }
     }
 }

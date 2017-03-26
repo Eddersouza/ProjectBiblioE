@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using ProjectBiblioE.Domain.Contracts.Filters;
@@ -52,6 +53,19 @@ namespace ProjectBiblioE.Infra.Data.Repositories
             var languages = ApplyFilter(_context.Genres, filters).ToList();
 
             return languages;
+        }
+
+        /// <summary>
+        /// Save genre.
+        /// </summary>
+        /// <param name="genre">Genre to save.</param>
+        /// <returns>True if save/ False if not.</returns>
+        public bool Save(Genre genre)
+        {
+            _context.Genres.Add(genre);
+            _context.SaveChanges();
+
+            return true;
         }
     }
 }

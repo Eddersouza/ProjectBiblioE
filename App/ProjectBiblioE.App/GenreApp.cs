@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using ProjectBiblioE.Domain.Contracts.App;
 using ProjectBiblioE.Domain.Contracts.Filters;
@@ -34,6 +35,16 @@ namespace ProjectBiblioE.App
         public List<Genre> GetGenres(GenreFilter filters)
         {
             return this._genreService.GetGenres(filters);
+        }
+
+        /// <summary>
+        /// Save genre.
+        /// </summary>
+        /// <param name="genre">Genre to save.</param>
+        /// <returns>True if save/ False if not.</returns>
+        public bool Save(Genre genre)
+        {
+            return this._genreService.Save(genre);
         }
     }
 }

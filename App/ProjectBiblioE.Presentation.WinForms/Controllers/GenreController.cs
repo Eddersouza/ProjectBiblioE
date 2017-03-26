@@ -1,8 +1,9 @@
-﻿using ProjectBiblioE.Domain.Contracts.App;
+﻿using System.Collections.Generic;
+
+using ProjectBiblioE.Domain.Contracts.App;
 using ProjectBiblioE.Domain.Contracts.Filters;
 using ProjectBiblioE.Domain.Entities;
 using ProjectBiblioE.Presentation.WinForms.ViewModels;
-using System.Collections.Generic;
 
 namespace ProjectBiblioE.Presentation.WinForms.Controllers
 {
@@ -42,6 +43,16 @@ namespace ProjectBiblioE.Presentation.WinForms.Controllers
             }
 
             return viewList;
-        }        
+        }
+
+        /// <summary>
+        /// Save genre.
+        /// </summary>
+        /// <param name="genreView">Genre to save.</param>
+        public void Save(GenreViewModel genreView)
+        {
+            var genre = genreView.ToGenreEntity();
+            _genreApp.Save(genre);
+        }
     }
 }
