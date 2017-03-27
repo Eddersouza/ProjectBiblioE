@@ -123,8 +123,9 @@ namespace ProjectBiblioE.Presentation.WinForms.Views.Genres
 
                 this.ScreenClose();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var error = ex;
                 // TODO: create log
                 string message = this._resources.GetString(MessageBiblioE.MSG_GenericError.ToString());
 

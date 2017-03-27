@@ -235,4 +235,7 @@
   <data name="GenreNew" xml:space="preserve">
     <value>Novo Gênero</value>
   </data>
+  <data name="MSG_Max_Characters" xml:space="preserve">
+    <value>O campo {0} deve ter no máximo {1} caracteres!</value>
+  </data>
 </root>

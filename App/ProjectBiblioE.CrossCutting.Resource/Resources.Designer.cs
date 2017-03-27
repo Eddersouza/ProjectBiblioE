@@ -394,6 +394,15 @@ namespace ProjectBiblioE.CrossCutting.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo {0} deve ter no máximo {1} caracteres!.
+        /// </summary>
+        public static string MSG_Max_Characters {
+            get {
+                return ResourceManager.GetString("MSG_Max_Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} {1} salvo com sucesso!.
         /// </summary>
         public static string MSG_Success_Saved {

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Resources;
 
 using ProjectBiblioE.CrossCutting.Resource;
 using ProjectBiblioE.Domain.Contracts.Utils;
 using ProjectBiblioE.Domain.Enums;
-using System.Collections;
+using ProjectBiblioE.Domain.Exceptions;
 
 namespace ProjectBiblioE.CrossCutting.Helpers
 {
@@ -66,14 +65,44 @@ namespace ProjectBiblioE.CrossCutting.Helpers
 
             listParams.Add(_resources.GetString(subjectMessage.ToString()));
 
-            foreach (var param in paramsMessage)
+            if (paramsMessage != null)
             {
-                listParams.Add(param);
+                foreach (var param in paramsMessage)
+                {
+                    listParams.Add(param);
+                }
             }
 
             messageComplete = this.MountMessage(message, listParams.ToArray());
 
             return messageComplete;
+        }
+
+        /// <summary>
+        /// Throw Messages.
+        /// </summary>
+        /// <param name="messagePatern">Pattern to message.</param>
+        /// <param name="paramsMessage">Params to message.</param>
+        public void ThrowMessage(MessageBiblioE messagePatern, params string[] paramsMessage)
+        {
+            string messageFieldRequired
+                = MountMessage(messagePatern, paramsMessage);
+
+            throw new BiblioEException(messageFieldRequired);
+        }
+
+        /// <summary>
+        /// Throw Messages.
+        /// </summary>
+        /// <param name="messagePatern">Pattern to message.</param>
+        /// <param name="subject">Subject to message.</param>
+        /// <param name="paramsMessage">Params to message.</param>
+        public void ThrowMessage(MessageBiblioE messagePatern, LabelText subject, params string[] paramsMessage)
+        {
+            string messageFieldRequired
+                = MountMessage(messagePatern, subject, paramsMessage);
+
+            throw new BiblioEException(messageFieldRequired);
         }
     }
 }
